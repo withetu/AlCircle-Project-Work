@@ -177,188 +177,20 @@ $(document).ready(function () {
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Ctrl+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyKGZsaWdodHMpXG5cbmBgYCJ9 -->
-<pre class="r"><code>str(flights)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiJ2RhdGEuZnJhbWUnOlx0MTcyOSBvYnMuIG9mICAyOSB2YXJpYWJsZXM6XG4gJCBZZWFyICAgICAgICAgICAgIDogaW50ICAyMDA4IDIwMDggMjAwOCAyMDA4IDIwMDggMjAwOCAyMDA4IDIwMDggMjAwOCAyMDA4IC4uLlxuICQgTW9udGggICAgICAgICAgICA6IGludCAgMSAxIDEgMSAxIDEgMSAxIDEgMSAuLi5cbiAkIERheW9mTW9udGggICAgICAgOiBpbnQgIDMgMyAzIDMgMyAzIDMgMyAzIDMgLi4uXG4gJCBEYXlPZldlZWsgICAgICAgIDogaW50ICA0IDQgNCA0IDQgNCA0IDQgNCA0IC4uLlxuICQgRGVwVGltZSAgICAgICAgICA6IGludCAgMjAwMyA3NTQgNjI4IDkyNiAxODI5IDE5NDAgMTkzNyAxMDM5IDYxNyAxNjIwIC4uLlxuICQgQ1JTRGVwVGltZSAgICAgICA6IGludCAgMTk1NSA3MzUgNjIwIDkzMCAxNzU1IDE5MTUgMTgzMCAxMDQwIDYxNSAxNjIwIC4uLlxuICQgQXJyVGltZSAgICAgICAgICA6IGludCAgMjIxMSAxMDAyIDgwNCAxMDU0IDE5NTkgMjEyMSAyMDM3IDExMzIgNjUyIDE2MzkgLi4uXG4gJCBDUlNBcnJUaW1lICAgICAgIDogaW50ICAyMjI1IDEwMDAgNzUwIDExMDAgMTkyNSAyMTEwIDE5NDAgMTE1MCA2NTAgMTY1NSAuLi5cbiAkIFVuaXF1ZUNhcnJpZXIgICAgOiBGYWN0b3Igdy8gMyBsZXZlbHMgXCJcIixcIk1RXCIsXCJXTlwiOiAzIDMgMyAzIDMgMyAzIDMgMyAzIC4uLlxuICQgRmxpZ2h0TnVtICAgICAgICA6IGludCAgMzM1IDMyMzEgNDQ4IDE3NDYgMzkyMCAzNzggNTA5IDUzNSAxMSA4MTAgLi4uXG4gJCBUYWlsTnVtICAgICAgICAgIDogRmFjdG9yIHcvIDU0NyBsZXZlbHMgXCJcIixcIk4yMDBXTlwiLFwiTjIwMUxWXCIsLi46IDQyMiA0NzEgMTc3IDI5MCAyMDcgNDMxIDQ2NCAxNzcgMzk3IDM0NCAuLi5cbiAkIEFjdHVhbEVsYXBzZWRUaW1lOiBpbnQgIDEyOCAxMjggOTYgODggOTAgMTAxIDI0MCAyMzMgOTUgNzkgLi4uXG4gJCBDUlNFbGFwc2VkVGltZSAgIDogaW50ICAxNTAgMTQ1IDkwIDkwIDkwIDExNSAyNTAgMjUwIDk1IDk1IC4uLlxuICQgQWlyVGltZSAgICAgICAgICA6IGludCAgMTE2IDExMyA3NiA3OCA3NyA4NyAyMzAgMjE5IDcwIDcwIC4uLlxuICQgQXJyRGVsYXkgICAgICAgICA6IGludCAgLTE0IDIgMTQgLTYgMzQgMTEgNTcgLTE4IDIgLTE2IC4uLlxuICQgRGVwRGVsYXkgICAgICAgICA6IGludCAgOCAxOSA4IC00IDM0IDI1IDY3IC0xIDIgMCAuLi5cbiAkIE9yaWdpbiAgICAgICAgICAgOiBGYWN0b3Igdy8gMzcgbGV2ZWxzIFwiXCIsXCJBQlFcIixcIkFMQlwiLC4uOiAyMyAyMyAyNCAyNCAyNCAyNCAyNCAyNCAyNCAyNCAuLi5cbiAkIERlc3QgICAgICAgICAgICAgOiBGYWN0b3Igdy8gNzEgbGV2ZWxzIFwiXCIsXCJBQlFcIixcIkFMQlwiLC4uOiA2OCA2OCAxMCAxMCAxMCAyOSAzMCAzMCAzNiAzNiAuLi5cbiAkIERpc3RhbmNlICAgICAgICAgOiBpbnQgIDgxMCA4MTAgNTE1IDUxNSA1MTUgNjg4IDE1OTEgMTU5MSA0NTEgNDUxIC4uLlxuICQgVGF4aUluICAgICAgICAgICA6IGludCAgNCA1IDMgMyAzIDQgMyA3IDYgMyAuLi5cbiAkIFRheGlPdXQgICAgICAgICAgOiBpbnQgIDggMTAgMTcgNyAxMCAxMCA3IDcgMTkgNiAuLi5cbiAkIENhbmNlbGxlZCAgICAgICAgOiBpbnQgIDAgMCAwIDAgMCAwIDAgMCAwIDAgLi4uXG4gJCBDYW5jZWxsYXRpb25Db2RlIDogRmFjdG9yIHcvIDQgbGV2ZWxzIFwiXCIsXCJBXCIsXCJCXCIsXCJDXCI6IDEgMSAxIDEgMSAxIDEgMSAxIDEgLi4uXG4gJCBEaXZlcnRlZCAgICAgICAgIDogaW50ICAwIDAgMCAwIDAgMCAwIDAgMCAwIC4uLlxuICQgQ2FycmllckRlbGF5ICAgICA6IGludCAgTkEgTkEgTkEgTkEgMiBOQSAxMCBOQSBOQSBOQSAuLi5cbiAkIFdlYXRoZXJEZWxheSAgICAgOiBpbnQgIE5BIE5BIE5BIE5BIDAgTkEgMCBOQSBOQSBOQSAuLi5cbiAkIE5BU0RlbGF5ICAgICAgICAgOiBpbnQgIE5BIE5BIE5BIE5BIDAgTkEgMCBOQSBOQSBOQSAuLi5cbiAkIFNlY3VyaXR5RGVsYXkgICAgOiBpbnQgIE5BIE5BIE5BIE5BIDAgTkEgMCBOQSBOQSBOQSAuLi5cbiAkIExhdGVBaXJjcmFmdERlbGF5OiBpbnQgIE5BIE5BIE5BIE5BIDMyIE5BIDQ3IE5BIE5BIE5BIC4uLlxuIn0= -->
-<pre><code>'data.frame':   1729 obs. of  29 variables:
- $ Year             : int  2008 2008 2008 2008 2008 2008 2008 2008 2008 2008 ...
- $ Month            : int  1 1 1 1 1 1 1 1 1 1 ...
- $ DayofMonth       : int  3 3 3 3 3 3 3 3 3 3 ...
- $ DayOfWeek        : int  4 4 4 4 4 4 4 4 4 4 ...
- $ DepTime          : int  2003 754 628 926 1829 1940 1937 1039 617 1620 ...
- $ CRSDepTime       : int  1955 735 620 930 1755 1915 1830 1040 615 1620 ...
- $ ArrTime          : int  2211 1002 804 1054 1959 2121 2037 1132 652 1639 ...
- $ CRSArrTime       : int  2225 1000 750 1100 1925 2110 1940 1150 650 1655 ...
- $ UniqueCarrier    : Factor w/ 3 levels &quot;&quot;,&quot;MQ&quot;,&quot;WN&quot;: 3 3 3 3 3 3 3 3 3 3 ...
- $ FlightNum        : int  335 3231 448 1746 3920 378 509 535 11 810 ...
- $ TailNum          : Factor w/ 547 levels &quot;&quot;,&quot;N200WN&quot;,&quot;N201LV&quot;,..: 422 471 177 290 207 431 464 177 397 344 ...
- $ ActualElapsedTime: int  128 128 96 88 90 101 240 233 95 79 ...
- $ CRSElapsedTime   : int  150 145 90 90 90 115 250 250 95 95 ...
- $ AirTime          : int  116 113 76 78 77 87 230 219 70 70 ...
- $ ArrDelay         : int  -14 2 14 -6 34 11 57 -18 2 -16 ...
- $ DepDelay         : int  8 19 8 -4 34 25 67 -1 2 0 ...
- $ Origin           : Factor w/ 37 levels &quot;&quot;,&quot;ABQ&quot;,&quot;ALB&quot;,..: 23 23 24 24 24 24 24 24 24 24 ...
- $ Dest             : Factor w/ 71 levels &quot;&quot;,&quot;ABQ&quot;,&quot;ALB&quot;,..: 68 68 10 10 10 29 30 30 36 36 ...
- $ Distance         : int  810 810 515 515 515 688 1591 1591 451 451 ...
- $ TaxiIn           : int  4 5 3 3 3 4 3 7 6 3 ...
- $ TaxiOut          : int  8 10 17 7 10 10 7 7 19 6 ...
- $ Cancelled        : int  0 0 0 0 0 0 0 0 0 0 ...
- $ CancellationCode : Factor w/ 4 levels &quot;&quot;,&quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 1 1 1 1 1 1 1 1 1 1 ...
- $ Diverted         : int  0 0 0 0 0 0 0 0 0 0 ...
- $ CarrierDelay     : int  NA NA NA NA 2 NA 10 NA NA NA ...
- $ WeatherDelay     : int  NA NA NA NA 0 NA 0 NA NA NA ...
- $ NASDelay         : int  NA NA NA NA 0 NA 0 NA NA NA ...
- $ SecurityDelay    : int  NA NA NA NA 0 NA 0 NA NA NA ...
- $ LateAircraftDelay: int  NA NA NA NA 32 NA 47 NA NA NA ...</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1ByaW50IHRoZSBzdW1tYXJ5IHN0YXRpc3RpY3Mgb2YgdGhlIGRhdGEuIFdoYXQgZG8geW91IHRoaW5rIGFib3V0IHRoZSB2YWx1ZXM/IChmb3JtYXQsIGNvbnNpc3RlbmN5LCBjb21wbGV0ZW5lc3MpXG5zdW1tYXJ5KGZsaWdodHMpXG5gYGAifQ== -->
-<pre class="r"><code>#Print the summary statistics of the data. What do you think about the values? (format, consistency, completeness)
-summary(flights)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgWWVhciAgICAgICAgICBNb250aCAgICAgICAgIERheW9mTW9udGggICAgICBEYXlPZldlZWsgICAgICAgIERlcFRpbWUgICAgICAgICBDUlNEZXBUaW1lICBcbiBNaW4uICAgOjIwMDggICBNaW4uICAgOjEuMDAwICAgTWluLiAgIDogMS4wMCAgIE1pbi4gICA6MS4wMDAgICBNaW4uICAgOiAgIDIuMCAgIE1pbi4gICA6IDYwMCAgXG4gMXN0IFF1LjoyMDA4ICAgMXN0IFF1LjoxLjAwMCAgIDFzdCBRdS46MTMuMDAgICAxc3QgUXUuOjMuMDAwICAgMXN0IFF1LjogOTUyLjggICAxc3QgUXUuOiA5NDAgIFxuIE1lZGlhbiA6MjAwOCAgIE1lZGlhbiA6MS4wMDAgICBNZWRpYW4gOjIyLjAwICAgTWVkaWFuIDo1LjAwMCAgIE1lZGlhbiA6MTMzMS4wICAgTWVkaWFuIDoxMzA1ICBcbiBNZWFuICAgOjIwMDggICBNZWFuICAgOjEuNDc3ICAgTWVhbiAgIDoxOC4zNSAgIE1lYW4gICA6NC4zMTMgICBNZWFuICAgOjEzNjYuOSAgIE1lYW4gICA6MTMyNyAgXG4gM3JkIFF1LjoyMDA4ICAgM3JkIFF1LjoyLjAwMCAgIDNyZCBRdS46MjIuMDAgICAzcmQgUXUuOjUuMDAwICAgM3JkIFF1LjoxNzQ3LjAgICAzcmQgUXUuOjE3MDAgIFxuIE1heC4gICA6MjAwOCAgIE1heC4gICA6Mi4wMDAgICBNYXguICAgOjMxLjAwICAgTWF4LiAgIDo3LjAwMCAgIE1heC4gICA6MjM1OC4wICAgTWF4LiAgIDoyMTQ1ICBcbiBOQSdzICAgOjIgICAgICBOQSdzICAgOjIgICAgICAgTkEncyAgIDoyICAgICAgIE5BJ3MgICA6MiAgICAgICBOQSdzICAgOjEwMSAgICAgIE5BJ3MgICA6MiAgICAgXG4gICAgQXJyVGltZSAgICAgICBDUlNBcnJUaW1lICAgVW5pcXVlQ2FycmllciAgIEZsaWdodE51bSAgICAgICBUYWlsTnVtICAgICBBY3R1YWxFbGFwc2VkVGltZVxuIE1pbi4gICA6ICAgNCAgIE1pbi4gICA6ICAxMCAgICAgOiAgMiAgICAgICAgTWluLiAgIDogICAxICAgICAgICAgIDogMTAxICAgTWluLiAgIDogMzUuMCAgICBcbiAxc3QgUXUuOjExNTEgICAxc3QgUXUuOjExNDUgICBNUTo4MDYgICAgICAgIDFzdCBRdS46MTQwMyAgIE42NzZBRSA6ICAxNyAgIDFzdCBRdS46IDY1LjAgICAgXG4gTWVkaWFuIDoxNTAyICAgTWVkaWFuIDoxNDM1ICAgV046OTIxICAgICAgICBNZWRpYW4gOjM1ODUgICBONTIyQUUgOiAgMTQgICBNZWRpYW4gOiA5MC4wICAgIFxuIE1lYW4gICA6MTQ5NyAgIE1lYW4gICA6MTQ3MiAgICAgICAgICAgICAgICAgTWVhbiAgIDoyODc4ICAgTjY1MlJTIDogIDE0ICAgTWVhbiAgIDoxMDQuOCAgICBcbiAzcmQgUXUuOjE4NTggICAzcmQgUXUuOjE4MzAgICAgICAgICAgICAgICAgIDNyZCBRdS46NDI4NiAgIE42NDVBRSA6ICAxMyAgIDNyZCBRdS46MTMxLjAgICAgXG4gTWF4LiAgIDoyMzU5ICAgTWF4LiAgIDoyMzU1ICAgICAgICAgICAgICAgICBNYXguICAgOjQzMDcgICBONjE1QUUgOiAgMTIgICBNYXguICAgOjQwOS4wICAgIFxuIE5BJ3MgICA6MTEwICAgIE5BJ3MgICA6MiAgICAgICAgICAgICAgICAgICAgTkEncyAgIDoyICAgICAgKE90aGVyKToxNTU4ICAgTkEncyAgIDoxMTAgICAgICBcbiBDUlNFbGFwc2VkVGltZSAgICBBaXJUaW1lICAgICAgICAgIEFyckRlbGF5ICAgICAgICAgRGVwRGVsYXkgICAgICAgICAgT3JpZ2luICAgICAgICAgRGVzdCAgICAgXG4gTWluLiAgIDogMzEgICAgTWluLiAgIDogMjMuMDAgICBNaW4uICAgOi0zOC4wMCAgIE1pbi4gICA6LTEzLjAwICAgT1JEICAgIDozNDQgICBPUkQgICAgOiAzOTggIFxuIDFzdCBRdS46IDY1ICAgIDFzdCBRdS46IDQ2LjAwICAgMXN0IFF1LjogLTMuMDAgICAxc3QgUXUuOiAgMC4wMCAgIEJXSSAgICA6MTcyICAgQldJICAgIDogIDYxICBcbiBNZWRpYW4gOiA4MCAgICBNZWRpYW4gOiA2NC4wMCAgIE1lZGlhbiA6IDE0LjAwICAgTWVkaWFuIDogMTAuMDAgICBEQUwgICAgOjEzNyAgIEhPVSAgICA6ICA2MSAgXG4gTWVhbiAgIDoxMDEgICAgTWVhbiAgIDogODEuOTMgICBNZWFuICAgOiAzMy43OSAgIE1lYW4gICA6IDMxLjU2ICAgQk5BICAgIDoxMDQgICBNRFcgICAgOiAgNTUgIFxuIDNyZCBRdS46MTIwICAgIDNyZCBRdS46MTAyLjAwICAgM3JkIFF1LjogNTIuMDAgICAzcmQgUXUuOiA0NS4wMCAgIE1EVyAgICA6IDc1ICAgTEFTICAgIDogIDUxICBcbiBNYXguICAgOjM2NSAgICBNYXguICAgOjM0MS4wMCAgIE1heC4gICA6NDIxLjAwICAgTWF4LiAgIDo0MjEuMDAgICBBQlEgICAgOiA2NSAgIFBIWCAgICA6ICA0OCAgXG4gTkEncyAgIDoyICAgICAgTkEncyAgIDoxMTAgICAgICBOQSdzICAgOjExMCAgICAgIE5BJ3MgICA6MTAxICAgICAgKE90aGVyKTo4MzIgICAoT3RoZXIpOjEwNTUgIFxuICAgIERpc3RhbmNlICAgICAgICBUYXhpSW4gICAgICAgICAgVGF4aU91dCAgICAgICAgIENhbmNlbGxlZCAgICAgICBDYW5jZWxsYXRpb25Db2RlXG4gTWluLiAgIDogMTA5ICAgTWluLiAgIDogMS4wMDAgICBNaW4uICAgOiAgNC4wMCAgIE1pbi4gICA6MC4wMDAwMCAgICA6MTYzMCAgICAgICAgICBcbiAxc3QgUXUuOiAyMzkgICAxc3QgUXUuOiAzLjAwMCAgIDFzdCBRdS46ICA5LjAwICAgMXN0IFF1LjowLjAwMDAwICAgQTogIDEzICAgICAgICAgIFxuIE1lZGlhbiA6IDM2OSAgIE1lZGlhbiA6IDUuMDAwICAgTWVkaWFuIDogMTIuMDAgICBNZWRpYW4gOjAuMDAwMDAgICBCOiAgNDAgICAgICAgICAgXG4gTWVhbiAgIDogNTAzICAgTWVhbiAgIDogNi4zNTUgICBNZWFuICAgOiAxNi41OSAgIE1lYW4gICA6MC4wNTczMiAgIEM6ICA0NiAgICAgICAgICBcbiAzcmQgUXUuOiA2OTMgICAzcmQgUXUuOiA3LjAwMCAgIDNyZCBRdS46IDE4LjAwICAgM3JkIFF1LjowLjAwMDAwICAgICAgICAgICAgICAgICAgIFxuIE1heC4gICA6MjM1NiAgIE1heC4gICA6NjYuMDAwICAgTWF4LiAgIDoxMzIuMDAgICBNYXguICAgOjEuMDAwMDAgICAgICAgICAgICAgICAgICAgXG4gTkEncyAgIDoyICAgICAgTkEncyAgIDoxMTAgICAgICBOQSdzICAgOjEwMSAgICAgIE5BJ3MgICA6MiAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBEaXZlcnRlZCAgICAgICAgIENhcnJpZXJEZWxheSAgICAgV2VhdGhlckRlbGF5ICAgICAgICBOQVNEZWxheSAgICAgIFNlY3VyaXR5RGVsYXlcbiBNaW4uICAgOjAuMDAwMDAwICAgTWluLiAgIDogIDAuMDAgICBNaW4uICAgOiAgMC4wMDAgICBNaW4uICAgOiAgMC4wMCAgIE1pbi4gICA6MCAgICBcbiAxc3QgUXUuOjAuMDAwMDAwICAgMXN0IFF1LjogIDAuMDAgICAxc3QgUXUuOiAgMC4wMDAgICAxc3QgUXUuOiAgMC4wMCAgIDFzdCBRdS46MCAgICBcbiBNZWRpYW4gOjAuMDAwMDAwICAgTWVkaWFuIDogIDAuMDAgICBNZWRpYW4gOiAgMC4wMDAgICBNZWRpYW4gOiAgNS4wMCAgIE1lZGlhbiA6MCAgICBcbiBNZWFuICAgOjAuMDA1MjExICAgTWVhbiAgIDogMTEuNTcgICBNZWFuICAgOiAgMy43NDIgICBNZWFuICAgOiAxNi40MyAgIE1lYW4gICA6MCAgICBcbiAzcmQgUXUuOjAuMDAwMDAwICAgM3JkIFF1LjogIDkuMDAgICAzcmQgUXUuOiAgMC4wMDAgICAzcmQgUXUuOiAyMS4wMCAgIDNyZCBRdS46MCAgICBcbiBNYXguICAgOjEuMDAwMDAwICAgTWF4LiAgIDo0MjEuMDAgICBNYXguICAgOjE2Mi4wMDAgICBNYXguICAgOjIyOC4wMCAgIE1heC4gICA6MCAgICBcbiBOQSdzICAgOjIgICAgICAgICAgTkEncyAgIDo5MjAgICAgICBOQSdzICAgOjkyMCAgICAgICBOQSdzICAgOjkyMCAgICAgIE5BJ3MgICA6OTIwICBcbiBMYXRlQWlyY3JhZnREZWxheVxuIE1pbi4gICA6ICAwLjAgICAgXG4gMXN0IFF1LjogIDAuMCAgICBcbiBNZWRpYW4gOiAyMy4wICAgIFxuIE1lYW4gICA6IDM5LjIgICAgXG4gM3JkIFF1LjogNTYuMCAgICBcbiBNYXguICAgOjI2Ny4wICAgIFxuIE5BJ3MgICA6OTIwICAgICAgXG4ifQ== -->
-<pre><code>      Year          Month         DayofMonth      DayOfWeek        DepTime         CRSDepTime  
- Min.   :2008   Min.   :1.000   Min.   : 1.00   Min.   :1.000   Min.   :   2.0   Min.   : 600  
- 1st Qu.:2008   1st Qu.:1.000   1st Qu.:13.00   1st Qu.:3.000   1st Qu.: 952.8   1st Qu.: 940  
- Median :2008   Median :1.000   Median :22.00   Median :5.000   Median :1331.0   Median :1305  
- Mean   :2008   Mean   :1.477   Mean   :18.35   Mean   :4.313   Mean   :1366.9   Mean   :1327  
- 3rd Qu.:2008   3rd Qu.:2.000   3rd Qu.:22.00   3rd Qu.:5.000   3rd Qu.:1747.0   3rd Qu.:1700  
- Max.   :2008   Max.   :2.000   Max.   :31.00   Max.   :7.000   Max.   :2358.0   Max.   :2145  
- NA's   :2      NA's   :2       NA's   :2       NA's   :2       NA's   :101      NA's   :2     
-    ArrTime       CRSArrTime   UniqueCarrier   FlightNum       TailNum     ActualElapsedTime
- Min.   :   4   Min.   :  10     :  2        Min.   :   1          : 101   Min.   : 35.0    
- 1st Qu.:1151   1st Qu.:1145   MQ:806        1st Qu.:1403   N676AE :  17   1st Qu.: 65.0    
- Median :1502   Median :1435   WN:921        Median :3585   N522AE :  14   Median : 90.0    
- Mean   :1497   Mean   :1472                 Mean   :2878   N652RS :  14   Mean   :104.8    
- 3rd Qu.:1858   3rd Qu.:1830                 3rd Qu.:4286   N645AE :  13   3rd Qu.:131.0    
- Max.   :2359   Max.   :2355                 Max.   :4307   N615AE :  12   Max.   :409.0    
- NA's   :110    NA's   :2                    NA's   :2      (Other):1558   NA's   :110      
- CRSElapsedTime    AirTime          ArrDelay         DepDelay          Origin         Dest     
- Min.   : 31    Min.   : 23.00   Min.   :-38.00   Min.   :-13.00   ORD    :344   ORD    : 398  
- 1st Qu.: 65    1st Qu.: 46.00   1st Qu.: -3.00   1st Qu.:  0.00   BWI    :172   BWI    :  61  
- Median : 80    Median : 64.00   Median : 14.00   Median : 10.00   DAL    :137   HOU    :  61  
- Mean   :101    Mean   : 81.93   Mean   : 33.79   Mean   : 31.56   BNA    :104   MDW    :  55  
- 3rd Qu.:120    3rd Qu.:102.00   3rd Qu.: 52.00   3rd Qu.: 45.00   MDW    : 75   LAS    :  51  
- Max.   :365    Max.   :341.00   Max.   :421.00   Max.   :421.00   ABQ    : 65   PHX    :  48  
- NA's   :2      NA's   :110      NA's   :110      NA's   :101      (Other):832   (Other):1055  
-    Distance        TaxiIn          TaxiOut         Cancelled       CancellationCode
- Min.   : 109   Min.   : 1.000   Min.   :  4.00   Min.   :0.00000    :1630          
- 1st Qu.: 239   1st Qu.: 3.000   1st Qu.:  9.00   1st Qu.:0.00000   A:  13          
- Median : 369   Median : 5.000   Median : 12.00   Median :0.00000   B:  40          
- Mean   : 503   Mean   : 6.355   Mean   : 16.59   Mean   :0.05732   C:  46          
- 3rd Qu.: 693   3rd Qu.: 7.000   3rd Qu.: 18.00   3rd Qu.:0.00000                   
- Max.   :2356   Max.   :66.000   Max.   :132.00   Max.   :1.00000                   
- NA's   :2      NA's   :110      NA's   :101      NA's   :2                         
-    Diverted         CarrierDelay     WeatherDelay        NASDelay      SecurityDelay
- Min.   :0.000000   Min.   :  0.00   Min.   :  0.000   Min.   :  0.00   Min.   :0    
- 1st Qu.:0.000000   1st Qu.:  0.00   1st Qu.:  0.000   1st Qu.:  0.00   1st Qu.:0    
- Median :0.000000   Median :  0.00   Median :  0.000   Median :  5.00   Median :0    
- Mean   :0.005211   Mean   : 11.57   Mean   :  3.742   Mean   : 16.43   Mean   :0    
- 3rd Qu.:0.000000   3rd Qu.:  9.00   3rd Qu.:  0.000   3rd Qu.: 21.00   3rd Qu.:0    
- Max.   :1.000000   Max.   :421.00   Max.   :162.000   Max.   :228.00   Max.   :0    
- NA's   :2          NA's   :920      NA's   :920       NA's   :920      NA's   :920  
- LateAircraftDelay
- Min.   :  0.0    
- 1st Qu.:  0.0    
- Median : 23.0    
- Mean   : 39.2    
- 3rd Qu.: 56.0    
- Max.   :267.0    
- NA's   :920      </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1ByaW50IHRoZSBkaW1lbnNpb25hbGl0eSBvZiB0aGUgZGF0YSAobnVtYmVyIG9mIHJvd3MgYW5kIGNvbHVtbnMpXG5kaW0oZmxpZ2h0cylcbmBgYCJ9 -->
-<pre class="r"><code>#Print the dimensionality of the data (number of rows and columns)
-dim(flights)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDE3MjkgICAyOVxuIn0= -->
-<pre><code>[1] 1729   29</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1ByaW50IHRoZSBudW1iZXIgb2Ygcm93cy4gVGhpcyBtYXkgc2VlbSBsaWtlIGEgc2lsbHkgY29tbWFuZCwgYnV0IGl0IGlzIHF1aXRlIHVzZWZ1bCBmb3IgbG9vcHMgYW5kIGlmIHN0YXRlbWVudHMuXG5ucm93KGZsaWdodHMpXG5gYGAifQ== -->
-<pre class="r"><code>#Print the number of rows. This may seem like a silly command, but it is quite useful for loops and if statements.
-nrow(flights)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDE3MjlcbiJ9 -->
-<pre><code>[1] 1729</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1ByaW50IHRoZSBudW1iZXIgb2YgY29sdW1ucy5cbm5jb2woZmxpZ2h0cylcbmBgYCJ9 -->
-<pre class="r"><code>#Print the number of columns.
-ncol(flights)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDI5XG4ifQ== -->
-<pre><code>[1] 29</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1ByaW50IHRoZSBuYW1lcyBvZiB0aGUgdmFyaWFibGVzLlxubmFtZXMoZmxpZ2h0cylcbmBgYCJ9 -->
-<pre class="r"><code>#Print the names of the variables.
-names(flights)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcIlllYXJcIiAgICAgICAgICAgICAgXCJNb250aFwiICAgICAgICAgICAgIFwiRGF5b2ZNb250aFwiICAgICAgICBcIkRheU9mV2Vla1wiICAgICAgICBcbiBbNV0gXCJEZXBUaW1lXCIgICAgICAgICAgIFwiQ1JTRGVwVGltZVwiICAgICAgICBcIkFyclRpbWVcIiAgICAgICAgICAgXCJDUlNBcnJUaW1lXCIgICAgICAgXG4gWzldIFwiVW5pcXVlQ2FycmllclwiICAgICBcIkZsaWdodE51bVwiICAgICAgICAgXCJUYWlsTnVtXCIgICAgICAgICAgIFwiQWN0dWFsRWxhcHNlZFRpbWVcIlxuWzEzXSBcIkNSU0VsYXBzZWRUaW1lXCIgICAgXCJBaXJUaW1lXCIgICAgICAgICAgIFwiQXJyRGVsYXlcIiAgICAgICAgICBcIkRlcERlbGF5XCIgICAgICAgICBcblsxN10gXCJPcmlnaW5cIiAgICAgICAgICAgIFwiRGVzdFwiICAgICAgICAgICAgICBcIkRpc3RhbmNlXCIgICAgICAgICAgXCJUYXhpSW5cIiAgICAgICAgICAgXG5bMjFdIFwiVGF4aU91dFwiICAgICAgICAgICBcIkNhbmNlbGxlZFwiICAgICAgICAgXCJDYW5jZWxsYXRpb25Db2RlXCIgIFwiRGl2ZXJ0ZWRcIiAgICAgICAgIFxuWzI1XSBcIkNhcnJpZXJEZWxheVwiICAgICAgXCJXZWF0aGVyRGVsYXlcIiAgICAgIFwiTkFTRGVsYXlcIiAgICAgICAgICBcIlNlY3VyaXR5RGVsYXlcIiAgICBcblsyOV0gXCJMYXRlQWlyY3JhZnREZWxheVwiXG4ifQ== -->
-<pre><code> [1] &quot;Year&quot;              &quot;Month&quot;             &quot;DayofMonth&quot;        &quot;DayOfWeek&quot;        
- [5] &quot;DepTime&quot;           &quot;CRSDepTime&quot;        &quot;ArrTime&quot;           &quot;CRSArrTime&quot;       
- [9] &quot;UniqueCarrier&quot;     &quot;FlightNum&quot;         &quot;TailNum&quot;           &quot;ActualElapsedTime&quot;
-[13] &quot;CRSElapsedTime&quot;    &quot;AirTime&quot;           &quot;ArrDelay&quot;          &quot;DepDelay&quot;         
-[17] &quot;Origin&quot;            &quot;Dest&quot;              &quot;Distance&quot;          &quot;TaxiIn&quot;           
-[21] &quot;TaxiOut&quot;           &quot;Cancelled&quot;         &quot;CancellationCode&quot;  &quot;Diverted&quot;         
-[25] &quot;CarrierDelay&quot;      &quot;WeatherDelay&quot;      &quot;NASDelay&quot;          &quot;SecurityDelay&quot;    
-[29] &quot;LateAircraftDelay&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1ByaW50IHdoZXRoZXIgdGhlIGZpcnN0IGNvbHVtbiBoYXMgbWlzc2luZyB2YWx1ZXMgKE5BcykuIFRyeSB0byBhbnN3ZXIgdGhpcyBxdWVzdGlvbiB3aXRoIHR3byB3YXlzLiBIaW50OiAlaW4lXG5tYXRjaChUUlVFLGlzLm5hKGZsaWdodHNbMV0pLG5vbWF0Y2ggPSBGQUxTRSlcbmBgYCJ9 -->
-<pre class="r"><code>#Print whether the first column has missing values (NAs). Try to answer this question with two ways. Hint: %in%
-match(TRUE,is.na(flights[1]),nomatch = FALSE)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDkwNVxuIn0= -->
-<pre><code>[1] 905</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI09SXG5UUlVFICVpbiUgaXMubmEoZmxpZ2h0c1sxXSlcbmBgYCJ9 -->
-<pre class="r"><code>#OR
-TRUE %in% is.na(flights[1])</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
-<pre><code>[1] TRUE</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1ByaW50IHRoZSBudW1iZXIgb2YgdmFyaWFibGVzIHRoYXQgY29udGFpbiBtaXNzaW5nIHZhbHVlcy5cbmNvdW50IDwtIDBcbmZvcihpIGluIDE6bmNvbChmbGlnaHRzKSl7XG4gICAgaWYobWF0Y2goVFJVRSwgaXMubmEoZmxpZ2h0c1tpXSksIG5vbWF0Y2ggPSBGQUxTRSkpe1xuICAgICAgICBjb3VudCA8LSBjb3VudCsxXG4gICAgfVxufVxuIyBPUlxuY291bnQgPC0gMFxuZm9yIChpIGluIDE6bmNvbChmbGlnaHRzKSl7XG4gIGlmKCBUUlVFICVpbiUgaXMubmEoZmxpZ2h0c1tpXSkpe1xuICAgIGNvdW50IDwtIGNvdW50KzFcbiAgfVxufVxucHJpbnQoY291bnQpXG5gYGAifQ== -->
-<pre class="r"><code>#Print the number of variables that contain missing values.
-count &lt;- 0
-for(i in 1:ncol(flights)){
-    if(match(TRUE, is.na(flights[i]), nomatch = FALSE)){
-        count &lt;- count+1
-    }
-}
-# OR
-count &lt;- 0
-for (i in 1:ncol(flights)){
-  if( TRUE %in% is.na(flights[i])){
-    count &lt;- count+1
-  }
-}
-print(count)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDI0XG4ifQ== -->
-<pre><code>[1] 24</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0ZpbmQgdGhlIHBvcnRpb24gb2YgdGhlIHZhcmlhYmxlcyB0aGF0IGNvbnRhaW4gbWlzc2luZyB2YWx1ZXMuIFdoYXQgZG8geW91IHRoaW5rIGFib3V0IGl0P1xuY291bnQvbmNvbChmbGlnaHRzKVxuYGBgIn0= -->
-<pre class="r"><code>#Find the portion of the variables that contain missing values. What do you think about it?
-count/ncol(flights)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuODI3NTg2MlxuIn0= -->
-<pre><code>[1] 0.8275862</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1ByaW50IHRoZSBuYW1lcyBvZiB0aGUgdmFyaWFibGVzIHRoYXQgY29udGFpbiBtaXNzaW5nIHZhbHVlcy5cbm5hbWUgPC0gYygpXG5mb3IgKGkgaW4gMTpsZW5ndGgoZmxpZ2h0cykpe1xuICAgIGlmKG1hdGNoKFRSVUUsIGlzLm5hKGZsaWdodHNbaV0pLCBub21hdGNoID0gRkFMU0UpKXtcbiAgICAgICAgbmFtYSA8LSBhcHBlbmQobmFtZSwgbmFtZXMoZmxpZ2h0c1tpXSkpXG4gICAgfVxufVxuYGBgIn0= -->
-<pre class="r"><code>#Print the names of the variables that contain missing values.
-name &lt;- c()
-for (i in 1:length(flights)){
-    if(match(TRUE, is.na(flights[i]), nomatch = FALSE)){
-        nama &lt;- append(name, names(flights[i]))
-    }
-}</code></pre>
-<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MCwibnJvdyI6Nn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJtMVBRUTdDSUJEY1FsdFRrcXFKN3lnSC9ZSXY4TlFyVnRSR2hJYlM2TkdYVjRGQ29vMGtzTHV6TzhQT1lWOXZTVTBBQUFIR0NCQzJhWXJzazBBS2hZdFBBTHdCZjM0YW1XUjMzdHRrL2FkWmFQV2djYUIwOHE5cEtwK3JOSUwxVVNXQzVNUU1vMmR0K2JZYVo1U0Y2a3lycENVaHQxYzJJeWQ2QnF3RzZUWTVWYzExa0xkcTV6N3c3ZW1XSWVaZmViQ0Qza0VxQzFJNWw1ZFc4cmk3WUVjdVFyRzBqcjFoMnVsV211akVvajAxeXJBNFJ4b2xJdUs5d2ZnQmt1UERQNFVCQUFBPSJ9 -->
+<div data-pagedtable>
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]}],"data":[{"_rn_":"1"},{"_rn_":"2"},{"_rn_":"3"},{"_rn_":"4"},{"_rn_":"5"},{"_rn_":"6"}],"options":{"columns":{"min":{},"max":[10],"total":[0]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQoNCiNodHRwOi8vci1leGVyY2lzZXMuY29tLzIwMTYvMTEvMTAvZGVzY3JpcHRpdmUtYW5hbHl0aWNzLXBhcnQtMy1vdXRsaWVyLXRyZWF0bWVudC8NCg0KZmxpZ2h0cyA8LSByZWFkLmNzdigiMjAwOC5jc3YiKQ0KDQojUHJpbnQgdGhlIHN0cnVjdHVyZSBvZiB0aGUgZGF0YS4gV2hhdCBkbyB5b3UgdGhpbmsgYWJvdXQgaXQ/DQpzdHIoZmxpZ2h0cykNCg0KI1ByaW50IHRoZSBzdW1tYXJ5IHN0YXRpc3RpY3Mgb2YgdGhlIGRhdGEuIFdoYXQgZG8geW91IHRoaW5rIGFib3V0IHRoZSB2YWx1ZXM/IChmb3JtYXQsIGNvbnNpc3RlbmN5LCBjb21wbGV0ZW5lc3MpDQpzdW1tYXJ5KGZsaWdodHMpDQoNCiNQcmludCB0aGUgZGltZW5zaW9uYWxpdHkgb2YgdGhlIGRhdGEgKG51bWJlciBvZiByb3dzIGFuZCBjb2x1bW5zKQ0KZGltKGZsaWdodHMpDQoNCiNQcmludCB0aGUgbnVtYmVyIG9mIHJvd3MuIFRoaXMgbWF5IHNlZW0gbGlrZSBhIHNpbGx5IGNvbW1hbmQsIGJ1dCBpdCBpcyBxdWl0ZSB1c2VmdWwgZm9yIGxvb3BzIGFuZCBpZiBzdGF0ZW1lbnRzLg0KbnJvdyhmbGlnaHRzKQ0KDQojUHJpbnQgdGhlIG51bWJlciBvZiBjb2x1bW5zLg0KbmNvbChmbGlnaHRzKQ0KDQojUHJpbnQgdGhlIG5hbWVzIG9mIHRoZSB2YXJpYWJsZXMuDQpuYW1lcyhmbGlnaHRzKQ0KDQojUHJpbnQgd2hldGhlciB0aGUgZmlyc3QgY29sdW1uIGhhcyBtaXNzaW5nIHZhbHVlcyAoTkFzKS4gVHJ5IHRvIGFuc3dlciB0aGlzIHF1ZXN0aW9uIHdpdGggdHdvIHdheXMuIEhpbnQ6ICVpbiUNCm1hdGNoKFRSVUUsaXMubmEoZmxpZ2h0c1sxXSksbm9tYXRjaCA9IEZBTFNFKQ0KI09SDQpUUlVFICVpbiUgaXMubmEoZmxpZ2h0c1sxXSkNCg0KI1ByaW50IHRoZSBudW1iZXIgb2YgdmFyaWFibGVzIHRoYXQgY29udGFpbiBtaXNzaW5nIHZhbHVlcy4NCmNvdW50IDwtIDANCmZvcihpIGluIDE6bmNvbChmbGlnaHRzKSl7DQogICAgaWYobWF0Y2goVFJVRSwgaXMubmEoZmxpZ2h0c1tpXSksIG5vbWF0Y2ggPSBGQUxTRSkpew0KICAgICAgICBjb3VudCA8LSBjb3VudCsxDQogICAgfQ0KfQ0KDQojIE9SDQoNCmNvdW50IDwtIDANCmZvciAoaSBpbiAxOm5jb2woZmxpZ2h0cykpew0KICBpZiggVFJVRSAlaW4lIGlzLm5hKGZsaWdodHNbaV0pKXsNCiAgICBjb3VudCA8LSBjb3VudCsxDQogIH0NCn0NCg0KcHJpbnQoY291bnQpDQoNCiNGaW5kIHRoZSBwb3J0aW9uIG9mIHRoZSB2YXJpYWJsZXMgdGhhdCBjb250YWluIG1pc3NpbmcgdmFsdWVzLiBXaGF0IGRvIHlvdSB0aGluayBhYm91dCBpdD8NCmNvdW50L25jb2woZmxpZ2h0cykNCg0KI1ByaW50IHRoZSBuYW1lcyBvZiB0aGUgdmFyaWFibGVzIHRoYXQgY29udGFpbiBtaXNzaW5nIHZhbHVlcy4NCm5hbWUgPC0gYygpDQpmb3IgKGkgaW4gMTpsZW5ndGgoZmxpZ2h0cykpew0KICAgIGlmKG1hdGNoKFRSVUUsIGlzLm5hKGZsaWdodHNbaV0pLCBub21hdGNoID0gRkFMU0UpKXsNCiAgICAgICAgbmFtYSA8LSBhcHBlbmQobmFtZSwgbmFtZXMoZmxpZ2h0c1tpXSkpDQogICAgfQ0KfQ0KDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQoNCiNodHRwOi8vci1leGVyY2lzZXMuY29tLzIwMTYvMTEvMTAvZGVzY3JpcHRpdmUtYW5hbHl0aWNzLXBhcnQtMy1vdXRsaWVyLXRyZWF0bWVudC8NCg0KZmxpZ2h0cyA8LSByZWFkLmNzdigiMjAwOC5jc3YiKQ0KDQojUHJpbnQgdGhlIHN0cnVjdHVyZSBvZiB0aGUgZGF0YS4gV2hhdCBkbyB5b3UgdGhpbmsgYWJvdXQgaXQ/DQpzdHIoZmxpZ2h0cykNCg0KI1ByaW50IHRoZSBzdW1tYXJ5IHN0YXRpc3RpY3Mgb2YgdGhlIGRhdGEuIFdoYXQgZG8geW91IHRoaW5rIGFib3V0IHRoZSB2YWx1ZXM/IChmb3JtYXQsIGNvbnNpc3RlbmN5LCBjb21wbGV0ZW5lc3MpDQpzdW1tYXJ5KGZsaWdodHMpDQoNCiNQcmludCB0aGUgZGltZW5zaW9uYWxpdHkgb2YgdGhlIGRhdGEgKG51bWJlciBvZiByb3dzIGFuZCBjb2x1bW5zKQ0KZGltKGZsaWdodHMpDQoNCiNQcmludCB0aGUgbnVtYmVyIG9mIHJvd3MuIFRoaXMgbWF5IHNlZW0gbGlrZSBhIHNpbGx5IGNvbW1hbmQsIGJ1dCBpdCBpcyBxdWl0ZSB1c2VmdWwgZm9yIGxvb3BzIGFuZCBpZiBzdGF0ZW1lbnRzLg0KbnJvdyhmbGlnaHRzKQ0KDQojUHJpbnQgdGhlIG51bWJlciBvZiBjb2x1bW5zLg0KbmNvbChmbGlnaHRzKQ0KDQojUHJpbnQgdGhlIG5hbWVzIG9mIHRoZSB2YXJpYWJsZXMuDQpuYW1lcyhmbGlnaHRzKQ0KDQojUHJpbnQgd2hldGhlciB0aGUgZmlyc3QgY29sdW1uIGhhcyBtaXNzaW5nIHZhbHVlcyAoTkFzKS4gVHJ5IHRvIGFuc3dlciB0aGlzIHF1ZXN0aW9uIHdpdGggdHdvIHdheXMuIEhpbnQ6ICVpbiUNCm1hdGNoKFRSVUUsaXMubmEoZmxpZ2h0c1sxXSksbm9tYXRjaCA9IEZBTFNFKQ0KI09SDQpUUlVFICVpbiUgaXMubmEoZmxpZ2h0c1sxXSkNCg0KI1ByaW50IHRoZSBudW1iZXIgb2YgdmFyaWFibGVzIHRoYXQgY29udGFpbiBtaXNzaW5nIHZhbHVlcy4NCmNvdW50IDwtIDANCmZvcihpIGluIDE6bmNvbChmbGlnaHRzKSl7DQogICAgaWYobWF0Y2goVFJVRSwgaXMubmEoZmxpZ2h0c1tpXSksIG5vbWF0Y2ggPSBGQUxTRSkpew0KICAgICAgICBjb3VudCA8LSBjb3VudCsxDQogICAgfQ0KfQ0KDQojIE9SDQoNCmNvdW50IDwtIDANCmZvciAoaSBpbiAxOm5jb2woZmxpZ2h0cykpew0KICBpZiggVFJVRSAlaW4lIGlzLm5hKGZsaWdodHNbaV0pKXsNCiAgICBjb3VudCA8LSBjb3VudCsxDQogIH0NCn0NCg0KcHJpbnQoY291bnQpDQoNCiNGaW5kIHRoZSBwb3J0aW9uIG9mIHRoZSB2YXJpYWJsZXMgdGhhdCBjb250YWluIG1pc3NpbmcgdmFsdWVzLiBXaGF0IGRvIHlvdSB0aGluayBhYm91dCBpdD8NCmNvdW50L25jb2woZmxpZ2h0cykNCg0KI1ByaW50IHRoZSBuYW1lcyBvZiB0aGUgdmFyaWFibGVzIHRoYXQgY29udGFpbiBtaXNzaW5nIHZhbHVlcy4NCm5hbWUgPC0gYygpDQpmb3IgKGkgaW4gMTpsZW5ndGgoZmxpZ2h0cykpew0KICAgIGlmKG1hdGNoKFRSVUUsIGlzLm5hKGZsaWdodHNbaV0pLCBub21hdGNoID0gRkFMU0UpKXsNCiAgICAgICAgbmFtYSA8LSBhcHBlbmQobmFtZSwgbmFtZXMoZmxpZ2h0c1tpXSkpDQogICAgfQ0KfQ0KDQoNCiNQYXJ0IDE6IERhdGEgRm9ybWF0dGluZyBFeGVyY2lzZXMNCg0KDQpsaWJyYXJ5KHN0cmluZ3IpDQpsaWJyYXJ5KGNocm9uKQ0KDQojUHJpbnQgdGhlIGZpcnN0IGZpdmUgcm93cyBvZiB0aGUgZGF0YXNldC4NCmhlYWQoZmxpZ2h0c1tuYW1lXSkgIyMgVGhlIGRhdGUgZm9ybWF0IG1ha2VzIHNlbnNlIHRvIHVzICwgYnV0IG5vdCB0byBSLCBpZiB3ZSBqdXN0IHByb2NlZWQgdG8gYW5hbHlzaXMgd2l0aG91dCB0aGUgZGF0YSBjbGVhbnNpbmcgdGhlIHJlc3VsdCB3aWxsIG1ha2Ugbm8gc2Vuc2Ugb3IgYmUgcXVpdGUgYmlhc2VkLg0KDQojQ3JlYXRlIGEgbmV3IG9iamVjdGVkIG5hbWVkIGRlcF90aW1lIGFuZCBhc3NpZ24gdGhlIHZhbHVlcyBvZiBmbGlnaHRzJERlcFRpbWUgLiBJZiB0aGUgdmFsdWUgaXMgbGVzcyB0aGFuIDQgZWxlbWVudHMsIGZpbGwgbWFrZSBpdCBhIDQtZWxlbWVudCB2YWx1ZSB3aXRoIHplcm9zLiBGb3IgZXhhbXBsZSwgMTIzIC0+IDAxMjMuDQpkZXBfdGltZSA8LSBzdHJfcGFkKGZsaWdodHMkRGVwVGltZSwgNCwgcGFkID0gIjAiKQ0KDQojQ3JlYXRlIGEgbmV3IG9iamVjdCBuYW1lZCBob3VyIGFuZCBhc3NpZ24gdGhlIGZpcnN0IHR3byBlbGVtZW50cyBvZiB0aGUgZGVwX3RpbWUgb2JqZWN0Lg0KaG91ciA8LSBzdWJzdHJpbmcoZGVwX3RpbWUsIDEsMikNCg0KI0NyZWF0ZSBhIG5ldyBvYmplY3QgbmFtZWQgbWludXRlcyBhbmQgYXNzaWduIHRoZSBsYXN0IHR3byBlbGVtZW50cyBvZiB0aGUgZGVwX3RpbWUgb2JqZWN0Lg0KDQoNCg0KYGBgDQoNCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDdHJsK0FsdCtJKi4NCg0KV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDdHJsK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuDQo=</div>
 
 
 

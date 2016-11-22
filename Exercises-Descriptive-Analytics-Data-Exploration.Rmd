@@ -66,6 +66,26 @@ for (i in 1:length(flights)){
     }
 }
 
+
+#Part 1: Data Formatting Exercises
+
+
+library(stringr)
+library(chron)
+
+#Print the first five rows of the dataset.
+head(flights[name]) ## The date format makes sense to us , but not to R, if we just proceed to analysis without the data cleansing the result will make no sense or be quite biased.
+
+#Create a new objected named dep_time and assign the values of flights$DepTime . If the value is less than 4 elements, fill make it a 4-element value with zeros. For example, 123 -> 0123.
+dep_time <- str_pad(flights$DepTime, 4, pad = "0")
+
+#Create a new object named hour and assign the first two elements of the dep_time object.
+hour <- substring(dep_time, 1,2)
+
+#Create a new object named minutes and assign the last two elements of the dep_time object.
+
+
+
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.

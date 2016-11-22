@@ -19,6 +19,8 @@ install.packages("svglite")
 vignette("fonts")
 install.packages("stringi")
 install.packages("caret")
+install.packages("stringr")
+install.packages("chron")
 
 ```
 

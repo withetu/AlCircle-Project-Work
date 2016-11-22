@@ -177,27 +177,50 @@ $(document).ready(function () {
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Ctrl+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5pbnN0YWxsLnBhY2thZ2VzKFwiZGV2dG9vbHNcIilcbmluc3RhbGxfZ2l0aHViKFwic2thcmRoYW1hci9yZ2FcIiwgZm9yY2UgPSBUUlVFKVxuaW5zdGFsbC5wYWNrYWdlcyhcImh0dHJcIilcbmluc3RhbGwucGFja2FnZXMoXCJ4bHN4XCIpXG5pbnN0YWxsLnBhY2thZ2VzKFwiUk9EQkNcIilcbmluc3RhbGwucGFja2FnZXMoXCJSTXlTUUxcIilcbmluc3RhbGwucGFja2FnZXMoXCJzdmdsaXRlXCIpXG52aWduZXR0ZShcImZvbnRzXCIpXG5pbnN0YWxsLnBhY2thZ2VzKFwic3RyaW5naVwiKVxuaW5zdGFsbC5wYWNrYWdlcyhcImNhcmV0XCIpXG5cbmBgYCJ9 -->
-<pre class="r"><code>
-install.packages(&quot;devtools&quot;)
-install_github(&quot;skardhamar/rga&quot;, force = TRUE)
-install.packages(&quot;httr&quot;)
-install.packages(&quot;xlsx&quot;)
-install.packages(&quot;RODBC&quot;)
-install.packages(&quot;RMySQL&quot;)
-install.packages(&quot;svglite&quot;)
-vignette(&quot;fonts&quot;)
-install.packages(&quot;stringi&quot;)
-install.packages(&quot;caret&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcImNocm9uXCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>install.packages(&quot;chron&quot;)
 </code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBpbiBpbnN0YWxsLnBhY2thZ2VzIDpcbiAgSW50ZXJuZXRPcGVuVXJsIGZhaWxlZDogJ0EgY29ubmVjdGlvbiB3aXRoIHRoZSBzZXJ2ZXIgY291bGQgbm90IGJlIGVzdGFibGlzaGVkJ1xuV2FybmluZyBpbiBpbnN0YWxsLnBhY2thZ2VzIDpcbiAgSW50ZXJuZXRPcGVuVXJsIGZhaWxlZDogJ0EgY29ubmVjdGlvbiB3aXRoIHRoZSBzZXJ2ZXIgY291bGQgbm90IGJlIGVzdGFibGlzaGVkJ1xuV2FybmluZyBpbiBpbnN0YWxsLnBhY2thZ2VzIDpcbiAgdW5hYmxlIHRvIGFjY2VzcyBpbmRleCBmb3IgcmVwb3NpdG9yeSBodHRwczovL2NyYW4ucnN0dWRpby5jb20vc3JjL2NvbnRyaWI6XG4gIGNhbm5vdCBvcGVuIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL3NyYy9jb250cmliL1BBQ0tBR0VTJ1xuIn0= -->
+<pre><code>Warning in install.packages :
+  InternetOpenUrl failed: 'A connection with the server could not be established'
+Warning in install.packages :
+  InternetOpenUrl failed: 'A connection with the server could not be established'
+Warning in install.packages :
+  unable to access index for repository https://cran.rstudio.com/src/contrib:
+  cannot open URL 'https://cran.rstudio.com/src/contrib/PACKAGES'</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiSW5zdGFsbGluZyBwYWNrYWdlIGludG8g4oCYQzovVXNlcnMvQWxjaXJjbGUvRG9jdW1lbnRzL1Ivd2luLWxpYnJhcnkvMy4z4oCZXG4oYXMg4oCYbGli4oCZIGlzIHVuc3BlY2lmaWVkKVxuIn0= -->
+<pre><code>Installing package into ‘C:/Users/Alcircle/Documents/R/win-library/3.3’
+(as ‘lib’ is unspecified)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBpbiBpbnN0YWxsLnBhY2thZ2VzIDpcbiAgSW50ZXJuZXRPcGVuVXJsIGZhaWxlZDogJ0EgY29ubmVjdGlvbiB3aXRoIHRoZSBzZXJ2ZXIgY291bGQgbm90IGJlIGVzdGFibGlzaGVkJ1xuIn0= -->
+<pre><code>Warning in install.packages :
+  InternetOpenUrl failed: 'A connection with the server could not be established'</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoidHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvMy4zL2Nocm9uXzIuMy00Ny56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDEwODY2NiBieXRlcyAoMTA2IEtCKVxuZG93bmxvYWRlZCAxMDYgS0JcbiJ9 -->
+<pre><code>trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.3/chron_2.3-47.zip'
+Content type 'application/zip' length 108666 bytes (106 KB)
+downloaded 106 KB</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDDouKCrMucY2hyb27DouKCrOKEoiBzdWNjZXNzZnVsbHkgdW5wYWNrZWQgYW5kIE1ENSBzdW1zIGNoZWNrZWRcblxuVGhlIGRvd25sb2FkZWQgYmluYXJ5IHBhY2thZ2VzIGFyZSBpblxuXHRDOlxcVXNlcnNcXEFsY2lyY2xlXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcUnRtcG9IOHlTeFxcZG93bmxvYWRlZF9wYWNrYWdlc1xuIn0= -->
+<pre><code>package â€˜chronâ€™ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\Alcircle\AppData\Local\Temp\RtmpoH8ySx\downloaded_packages</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gZmlsZShjb24sIFwicmJcIikgOlxuICBjYW5ub3Qgb3BlbiBmaWxlICdDOi9Vc2Vycy9BbGNpcmNsZS9Eb2N1bWVudHMvR2l0SHViL0FsQ2lyY2xlLVByb2plY3QtV29yay9BbENpcmNsZS1Qcm9qZWN0LVdvcmsvLlJwcm9qLnVzZXIvc2hhcmVkL25vdGVib29rcy82OUJDQTYwLUluc3RhbGwtUGFja2FnZXMvMS9zL2NodW5rcy5qc29uJzogTm8gc3VjaCBmaWxlIG9yIGRpcmVjdG9yeVxuIn0= -->
+<pre><code>Warning message:
+In file(con, &quot;rb&quot;) :
+  cannot open file 'C:/Users/Alcircle/Documents/GitHub/AlCircle-Project-Work/AlCircle-Project-Work/.Rproj.user/shared/notebooks/69BCA60-Install-Packages/1/s/chunks.json': No such file or directory</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQoNCmluc3RhbGwucGFja2FnZXMoImRldnRvb2xzIikNCmluc3RhbGxfZ2l0aHViKCJza2FyZGhhbWFyL3JnYSIsIGZvcmNlID0gVFJVRSkNCmluc3RhbGwucGFja2FnZXMoImh0dHIiKQ0KaW5zdGFsbC5wYWNrYWdlcygieGxzeCIpDQppbnN0YWxsLnBhY2thZ2VzKCJST0RCQyIpDQppbnN0YWxsLnBhY2thZ2VzKCJSTXlTUUwiKQ0KaW5zdGFsbC5wYWNrYWdlcygic3ZnbGl0ZSIpDQp2aWduZXR0ZSgiZm9udHMiKQ0KaW5zdGFsbC5wYWNrYWdlcygic3RyaW5naSIpDQppbnN0YWxsLnBhY2thZ2VzKCJjYXJldCIpDQoNCmBgYA0KDQpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ3RybCtBbHQrSSouDQoNCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ3RybCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQoNCmluc3RhbGwucGFja2FnZXMoImRldnRvb2xzIikNCmluc3RhbGxfZ2l0aHViKCJza2FyZGhhbWFyL3JnYSIsIGZvcmNlID0gVFJVRSkNCmluc3RhbGwucGFja2FnZXMoImh0dHIiKQ0KaW5zdGFsbC5wYWNrYWdlcygieGxzeCIpDQppbnN0YWxsLnBhY2thZ2VzKCJST0RCQyIpDQppbnN0YWxsLnBhY2thZ2VzKCJSTXlTUUwiKQ0KaW5zdGFsbC5wYWNrYWdlcygic3ZnbGl0ZSIpDQp2aWduZXR0ZSgiZm9udHMiKQ0KaW5zdGFsbC5wYWNrYWdlcygic3RyaW5naSIpDQppbnN0YWxsLnBhY2thZ2VzKCJjYXJldCIpDQppbnN0YWxsLnBhY2thZ2VzKCJzdHJpbmdyIikNCmluc3RhbGwucGFja2FnZXMoImNocm9uIikNCg0KYGBgDQoNCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDdHJsK0FsdCtJKi4NCg0KV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDdHJsK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuDQo=</div>
 
 
 
