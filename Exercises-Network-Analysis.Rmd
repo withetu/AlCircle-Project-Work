@@ -1,0 +1,75 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+
+#http://r-exercises.com/2016/10/02/network-analysis-part-2-exercises/
+
+library(igraph)
+
+#Load the data and create an unweighted directed graph from the adjecancy matrix. Name the nodes as letters A to Y. Set node color to yellow and shape to sphere. Set the edge’s color to gray and arrow size to 0.2.
+d <- read.csv("sociogram-employees-un.csv", header=FALSE)
+g <- graph.adjacency(as.matrix(d), mode="directed")
+V(g)$name <- LETTERS[1:NCOL(d)]
+V(g)$color <- "yellow"
+V(g)$shape <- "sphere"
+E(g)$color <- "gray"
+E(g)$arrow.size <- 0.2
+
+#Plot the graph.
+plot(g)
+
+#Calculate network diameter and average closeness.
+diameter(g)
+mean(closeness(g))
+
+#Calculate average network betweenness.
+mean(betweenness(g))
+
+#Calculate network density and average degree.
+graph.density(g)
+mean(degree(g, mode = "all"))
+
+#Calculate network reciprocity and average transitivity.
+reciprocity(g)
+mean(transitivity(g))        
+
+#Calculate average eccentricity of the vertices. What is the average distance between two nodes?
+mean(eccentricity(g))
+mean_distance(g)
+
+#Find the hubs and plot graph with node’s size according to their hubs index. Which employee is the biggest hub?
+hs <- hub.score(g)$vector
+hs
+plot(g, layout = layout.fruchterman.reingold, vertex.size=hs*25)
+which.max(hs)
+
+#Find the authorities and plot graph with node’s size according to their authority index. Which employee is the biggest authority?
+as <- authority.score(g)$vector
+as
+plot(g, layout = layout_nicely, vertex.size = as*20)
+which.max(as)
+
+#Show the nodes that make diameter. Plot these nodes larger and in red. Plot edges on this path thicker in red.
+diameter.nodes <- get.diameter(g)
+diameter.nodes
+
+V(g)$size <- 20
+V(g)[diameter.nodes]$color <- "red"
+V(g)[diameter.nodes]$size <- V(g)[diameter.nodes]$size+10
+E(g)$width <- 1
+E(g, path = diameter.nodes)$color <- "red"
+E(g, path = diameter.nodes)$width <- 2
+plot.igraph(g, layout = layout.fruchterman.reingold)
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
