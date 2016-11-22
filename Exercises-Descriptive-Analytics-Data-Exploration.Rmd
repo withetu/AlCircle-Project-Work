@@ -83,6 +83,65 @@ dep_time <- str_pad(flights$DepTime, 4, pad = "0")
 hour <- substring(dep_time, 1,2)
 
 #Create a new object named minutes and assign the last two elements of the dep_time object.
+minutes <- substring(dep_time, 3, 4)
+
+#Assign to the object dep_time the hour in format ‘HH:MM:SS’ , seconds should be ‘00’ , we make this assumption for the sake of formatting.
+for(i in 1:length(dep_time)){
+  dep_time[i] <- paste(c(hour[i],minutes[i],'00'),collapse = ':')
+}
+
+#Change the class of dep_time from character to times.
+dep_time <- chron(times = dep_time)
+
+#Print the first 10 rows and then the 10 last rows of the dep_time. If the formatting of the object is ‘HH:MM:SS’(as it should) then assign the dep_time to flights$DepTime
+head(dep_time, n=10)
+
+tail(dep_time, n=10)
+
+flights$DepTime <- dep_time
+
+#Do the exact same process for the flights$DepTime and create the variable arr_time
+arr_time <- str_pad(flights$ArrTime, 4, pad = "0")
+hour <- substring(arr_time, 1,2)
+minutes <- substring(arr_time, 3,4)
+for(i in 1:length(arr_time)){
+    arr_time[i] <- paste(c(hour[i], minutes[i], '00'), collapse = ':')
+}
+arr_time <- chron(times = arr_time)
+
+head(arr_time, n =10)
+tail(arr_time, n = 10)
+flights$ArrTime <- arr_time
+
+#Do the exact same process for the flights$ CRSDepTime and create the variable crs_dep_time
+crs_dep_time <- str_pad(flights$CRSDepTime, 4, pad = "0")
+hour <- substring(crs_dep_time, 1,2)
+minutes <- substring(crs_dep_time, 3,4)
+for(i in 1:length(crs_dep_time)){
+    crs_dep_time[i] <- paste(c(hour[i], minutes[i], '00'), collapse = ':')
+}
+crs_dep_time <- chron(times = crs_dep_time)
+
+head(crs_dep_time, n =10)
+tail(crs_dep_time, n = 10)
+flights$CRSDepTime <- crs_dep_time
+
+#Do the exact same process for the flights$CRSArrTime and create the variable crs_arr_time.
+crs_arr_time <- str_pad(flights$CRSArrTime, 4, pad = "0")
+hour <- substring(crs_arr_time, 1,2)
+minutes <- substring(crs_arr_time, 3,4)
+for(i in 1:length(crs_arr_time)){
+    crs_arr_time[i] <- paste(c(hour[i], minutes[i], '00'), collapse = ':')
+}
+crs_arr_time <- chron(times = crs_arr_time)
+
+head(crs_arr_time, n =10)
+tail(crs_arr_time, n = 10)
+flights$CRSArrTime <- crs_arr_time
+
+
+
+#Part 2 : Data Imputation
 
 
 
