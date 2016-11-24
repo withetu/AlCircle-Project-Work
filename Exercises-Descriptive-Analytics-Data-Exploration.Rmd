@@ -10,6 +10,8 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 ```{r}
 
 #http://r-exercises.com/2016/11/10/descriptive-analytics-part-3-outlier-treatment/
+#https://www.r-bloggers.com/descriptive-analytics-part-4-data-manipulation/
+#http://r-exercises.com/2016/11/21/descriptive-analytics-part-4-data-manipulation/
 
 flights <- read.csv("2008.csv")
 
@@ -177,6 +179,90 @@ pred_dep_time_delay <- predict(lm_dep_time_delay, flights)
 flights$DepDelay <- ifelse(is.na(flights$DepDelay), pred_dep_time_delay, flights$DepDelay)
 
 summary(flights)
+
+
+
+# Part 4 : Data Manipulation
+
+
+library(dplyr)
+library(chron)
+library(rapportools)
+library(outliers)
+
+flights <- tbl_df(flights)
+
+#Print the destination, the delay of arrivals and the air time of each flight. Hint: use select function
+flights%>%
+    select(Dest, ArrDelay, AirTime)
+
+#Print the columns that their name contains the word ‘Delay’.
+flights%>%
+    select(contains('Delay'))
+
+#Print the names of carrier, the month and the day of the week that the delay of carrier is higher than 180.
+flights%>%
+    filter(CarrierDelay>180) %>%
+    select(UniqueCarrier, DayOfWeek, Month)
+
+#Print out all the flights grouped by carrier names.
+flights%>%
+    group_by(UniqueCarrier)
+
+#Print out the mean of the arrival delay using the summarise function.
+flights%>%
+    summarise(Mean_ArrDelay = mean(ArrDelay, na.rm = TRUE))
+
+#Print out the minimum,mean,median,variance,standard deviation,maximum,and counts of AirTime.
+flights%>%
+    summarise(Min = min(AirTime),
+              Mean = mean(AirTime),
+              Median = median(AirTime),
+              Var = var(AirTime),
+              Std = sd(AirTime),
+              Max = max(AirTime),
+              Count = n()
+              )
+
+#Print out the mean delay and the number of flights of each carrier.
+flights%>%
+    group_by(UniqueCarrier)%>%
+    summarise(Mean_Delay = mean(ArrDelay),
+              Number_of_flights = n()
+              )
+
+#Print out the mean delay and the number of flights of each carrier in descending order.
+flights%>%
+    group_by(UniqueCarrier)%>%
+    summarise(Mean_Delay = mean(ArrDelay, na.rm = TRUE),
+              Number_of_flights = n()) %>%
+    arrange(desc(Mean_Delay)) 
+
+#This exercise is a bit out of context, but it will demonstrate a great way of manipulating data and it is a prerequisite for the next exercise.
+#Create a new column code>Full_Date which will contain the date of each flight and then print it out. Hint: Use the mutate function.
+
+flights$Year <- as.character(flights$Year)
+flights$Month <- as.character(flights$Month)
+flights$DayofMonth <- as.character(flights$DayofMonth)
+
+flights <- flights %>%
+    mutate(Full_Date = chron(date = paste(Month, DayofMonth, Year, sep = '/')))
+
+flights %>%
+    select(Full_Date)
+
+#Print out the dates that had the most flights and then print out the dates that had the highest ratio of cancelled flights.
+flights %>%
+    group_by(Full_Date) %>%
+    summarise(Number_of_flights = n()) %>%
+    arrange(desc(Number_of_flights))
+
+flights %>%
+    group_by(Full_Date) %>%
+    summarise(Number_of_flights = n(), Ratio_of_Cancelled = sum(Cancelled)/n())%>%
+    arrange(desc(Ratio_of_Cancelled)) %>%
+    select(Full_Date, Number_of_flights, Ratio_of_Cancelled)
+
 
 ```
 

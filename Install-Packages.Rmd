@@ -22,6 +22,8 @@ install.packages("caret")
 install.packages("stringr")
 install.packages("chron")
 install.packages("Hmisc")
+install.packages("rapportools")
+install.packages("outliers")
 
 ```
 
