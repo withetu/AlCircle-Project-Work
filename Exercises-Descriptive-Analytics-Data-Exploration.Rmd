@@ -143,7 +143,40 @@ flights$CRSArrTime <- crs_arr_time
 
 #Part 2 : Data Imputation
 
+#For this set of exercises you will need to install and load the package Hmisc.
+library(Hmisc)
 
+#Print the summary statistics in order to have an actual idea of the missing values.
+summary(flights)
+
+#Impute the missing values of flights$ArrTime with the mean using which.
+flights$ArrTime[which(is.na(flights$AirTime))] <- mean(flights$AirTime)
+
+#Impute the missing values of flights$CRSArrTime with the median using which.
+flights$CRSArrTime[which(is.na(flights$CRSArrTime))] <- median(flights$CRSArrTime, na.rm = TRUE)
+
+#Impute the missing values of flights$AirTime with the median using the transform operator.
+flights <- transform(flights, AirTime = ifelse(is.na(AirTime), mean(AirTime, na.rm = TRUE), AirTime))
+
+#Impute the missing values of flights$DepTime with the median using the transform operator. Note: mind the data formatting .
+flights <- transform(flights, DepTime = chron(times = ifelse(is.na(DepTime), mean(DepTime, na.rm = TRUE), DepTime)))
+
+#Impute the missing values of flights$ArrDelay with the median using the impute operator.
+flights$ArrDelay <- impute(flights$ArrDelay, mean)
+
+#Impute the missing values of flights$CRSElapsedTime with the median using the impute operator.
+flights$CRSElapsedTime <- impute(flights$CRSElapsedTime, median)
+
+#Make a linear regression model named lm_dep_time_delay with target variable flights$DepDelay and independent variables : flights$ArrTime, flights$AirTime, flights$ArrDelay, flights$DepTime.
+lm_dep_time_delay <- lm(DepDelay ~ ArrTime+AirTime+ArrDelay+DepTime, data = flights)
+
+#Create an object pred_dep_time_delay and assign the predicted values.
+pred_dep_time_delay <- predict(lm_dep_time_delay, flights)
+
+#Impute the missing values based using the pred_dep_time_delay and ifelse function. Print the summary statistics to see the changes that you made.
+flights$DepDelay <- ifelse(is.na(flights$DepDelay), pred_dep_time_delay, flights$DepDelay)
+
+summary(flights)
 
 ```
 
