@@ -1,0 +1,55 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+#https://www.r-bloggers.com/a-simple-histogram-and-why-you-need-to-practice-it/
+#http://sharpsightlabs.com/blog/histogram-in-r-basic/
+#http://sharpsightlabs.com/blog/small-multiples-ggplot/
+
+
+# LOAD GGPLOT2
+library(ggplot2)
+
+#--------------------------------------
+# CREATE VARIABLE, NORMALLY DISTRIBUTED
+#--------------------------------------
+# set "seed" for random numbers
+set.seed(42)
+
+# create variable
+xvar_rand_norm <- rnorm(1000, mean = 5)
+
+#--------------------------------
+# CREATE DATA FRAME FROM VARIABLE
+#--------------------------------
+df.xvar <- data.frame(xvar_rand_norm)
+
+#---------------------------------
+# CALCULATE MEAN
+#  we'll use this in an annotation
+#---------------------------------
+xvar_mean <- mean(xvar_rand_norm)
+
+#-----------------------------------------------
+# PLOT
+#  Here, we're going to plot the histogram
+#  We'll also add a line at the calculated mean
+#  and also add an annotation to specify the 
+#  value of the calculated mean
+#-----------------------------------------------
+ggplot(data = df.xvar, aes(x = xvar_rand_norm)) +
+  geom_histogram() +
+  geom_vline(xintercept = xvar_mean, color = "dark red") +
+  annotate("text", label = paste("Mean: ", round(xvar_mean,digits = 2)), x = xvar_mean, y = 30, color = "white", size = 5)
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
