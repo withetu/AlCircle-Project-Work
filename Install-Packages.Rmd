@@ -24,6 +24,7 @@ install.packages("chron")
 install.packages("Hmisc")
 install.packages("rapportools")
 install.packages("outliers")
+install.packages("googlesheets")
 
 ```
 
