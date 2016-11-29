@@ -1,0 +1,113 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+# https://www.r-bloggers.com/best-practices-while-writing-r-code-exercises/
+
+# We want to create a numeric vector. The values of this vector should be between 1 and 10, starting from 1 with a difference of 2. Below is the code to generate a numeric vector.Make the suitable changes so that it follows standard practice for assignments.
+
+# NumVector = seq(1,10,by=2)
+NumVector <- seq(1, 10, by=2) #'<-' should be used for assignment not '='
+
+# The command below installs “car” package. Make changes in the command below so that all the packages get installed on which “car” is dependent.
+
+# install.packages("car")
+install.packages("car", dependencies = TRUE) #  "dependencies = TRUE" or "dependencies=T" will install all the packages on which "car" package is dependent.
+
+# Make the changes in the below code so that it is easy for other users to read and it follows the standard practice while writing an if/else statement in R.
+# y <- 0
+# x <- 0
+
+# if (y == 0)
+# {
+# log(x)
+# } else {
+# y ^ x
+# } 
+y <- 0; x <- 10
+if (y ==0){
+    log(x)
+} else {
+    y ^ x
+}
+# An opening curly brace should never go on its own line and should always be followed by a new line. 
+# A closing curly brace should always go on its own line, unless it is followed by else.
+
+# Update the below code so that it is easy for other users to read it.
+# NumVector <- seq(1,10,by=2)
+# if(length(NumVector) > 10 && debug)
+# message(“Length of the numeric vector is greater than 10”)
+NumVector <- seq(1, 10, by = 2)
+if(length(NumVector) > 10 && debug) {
+    message("Length of the numeric vector is greater than 10")
+}
+# Always put curly braces inside if or else statement even you have only argument inside the statement.
+
+#Correct the indentation in the below function so that it is easy for you and other users to read and understand.
+#test<-1
+#if (test==1) {
+#print(“Hello World!”)
+#print(“The value of test is 1 here”)
+#} else{
+#print(“The value of test is not 1 here”);
+#}
+#print(test*test+1);
+test <- 1
+if (test == 1) {
+    print("Hello World!")
+    print("The value of test is 1 here")
+} else {
+    print("The value of test is not 1 here");
+}
+print(test*test+1);
+# When indenting your code, use two spaces. Never use tabs or mix tabs and spaces.
+# You can also use one space instead of two but make sure it is same across the whole code.
+
+# *** Update the below code such that it first checks if the “dplyr” package is present. if it is already present, don’t install it just load the package.If the package is not present, install it and then load it.
+# install.packages("dplyr",dependencies = T)
+if(!require(dplyr)){
+    install.packages("dplyr")
+}
+library(dplyr)
+
+# *** Change the below code so that the it doesn’t print package related information while loading the plyr package.
+# library(plyr)
+suppressMessages(library(plyr))
+
+# Make the changes in the below code so that it doesn’t print warnings while calculating the correlation value between two vectors.
+#a <- c(1,1)
+#b <- c(2,3)
+#cor(a,b)
+a <- c(1, 1)
+b <- c(2, 3)
+suppressWarnings(cor(a, b))
+
+# Update the below command so that it calls the ‘rename’ function from ‘plyr’ package. The same function is present in both the packages- ‘plyr’ and ‘rename’.
+# rename(head(mtcars), c(mpg = "NewName"))
+plyr::rename(head(mtcars), c(mpg = "NewName"))
+
+# Create a scalar vector ‘a’ with a value of 10e-02 (1/100). Below code prints the same vector in scientific format. Make changes to print in a numeric format.
+# a <- 1e-02
+# print(a)
+options(scipen = 999)
+a <- 1e-02
+print(a)
+
+
+
+
+
+
+
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
