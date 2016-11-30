@@ -25,6 +25,10 @@ install.packages("Hmisc")
 install.packages("rapportools")
 install.packages("outliers")
 install.packages("googlesheets")
+install.packages("psych")
+install.packages("ez")
+
+
 
 ```
 

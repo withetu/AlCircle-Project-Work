@@ -1,0 +1,81 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+#https://www.r-bloggers.com/repeated-measures-anova-in-r-exercises/
+
+#Load the data and inspect its structure
+suppressMessages(library(foreign))
+exercises = read.csv("exer.csv")
+attach(exercises)
+head(exercises)
+
+#Check for missing values
+sapply(exercises, function(x) sum(is.na(x)))
+#check structure of data and perform necessary conversion to factors
+str(exercises)
+exercises$time = as.factor(time)
+exercises$exertype = as.factor(exertype)
+exercises$diet = as.factor(diet)
+exercises$id = as.factor(id)
+
+#Check for balance in between-subjects factor
+table(diet)
+table(exertype)
+table(diet, exertype)
+#The design is balanced
+
+#Generate descriptive statistics for the sex variable which is a between subjects factor
+#Descriptive statistics are used to describe the basic features of the data in a study. They provide simple summaries about the sample and the measures. Together with simple graphics analysis, they form the basis of virtually every quantitative analysis of data.
+#get descriptive statistics across the diet variable
+if(!require(psych)){
+    install.packages("psych")
+}
+library(psych)
+describeBy(pulse, diet)
+
+#Generate descriptive statistics for the treatment level variable which is a between subjects factor
+#get descriptive statistics across exercise type
+describeBy(pulse, exertype)
+
+#Generate descriptive statistics for the weeks variable which is the within subjects factor
+#get descriptive statistics across time points
+describeBy(pulse, time)
+
+#Use histograms to assess distribution across within subjects factor.
+library(ggplot2)
+ggplot(exercises,aes(x=pulse)) + geom_histogram(binwidth = 3,aes(y=..density..)) + facet_grid(. ~ time) + geom_density(col=3)
+#observations at time points 2 and 3 seem to depart from normality
+
+#Perform a repeated measures analysis with only the within subjects factor
+#function ezAnova is one of the ways we can do repeated measures
+#we will use library ez, so you need to install it
+if(!require(ez)){
+    install.packages("ez")
+}
+library(ez)
+#perform analysis with only the within subject factor
+ex1 = ezANOVA(exercises, dv = .(pulse), wid = .(id), within = .(time), detailed = TRUE)
+ex1
+
+#Perform a repeated measures analysis with the within subjects factor and one between subjects factor
+ex2 = ezANOVA(exercises, dv= .(pulse), wid = .(id), within = .(time), between = .(diet), detailed = TRUE)
+ex2
+
+#Perform a repeated measures analysis with the within subjects factor and two between subjects factors
+ex3 = ezANOVA(exercises, dv= .(pulse), wid = .(id), within = .(time), between = .(diet, exertype), detailed = TRUE)
+ex3
+
+
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).

@@ -143,7 +143,7 @@ $(document).ready(function () {
 <script src="data:application/x-javascript;base64,Cgp3aW5kb3cuaW5pdGlhbGl6ZVNvdXJjZUVtYmVkID0gZnVuY3Rpb24oZmlsZW5hbWUpIHsKICAkKCIjcm1kLWRvd25sb2FkLXNvdXJjZSIpLmNsaWNrKGZ1bmN0aW9uKCkgewogICAgdmFyIHNyYyA9IHdpbmRvdy5hdG9iKCQoIiNybWQtc291cmNlLWNvZGUiKS5odG1sKCkpOwogICAgdmFyIGJsb2IgPSBuZXcgQmxvYihbc3JjXSwge3R5cGU6ICJ0ZXh0L3gtci1tYXJrZG93biJ9KTsKICAgIHNhdmVBcyhibG9iLCBmaWxlbmFtZSk7CiAgfSk7Cn07Cg=="></script>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("Install-Packages.Rmd");
+  window.initializeSourceEmbed("ANOVA-Repeated-Measures-Anova-in-R-Exercises.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -177,39 +177,45 @@ $(document).ready(function () {
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Ctrl+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcImdvb2dsZXNoZWV0c1wiKVxuXG5gYGAifQ== -->
-<pre class="r"><code>install.packages(&quot;googlesheets&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXgzID0gZXpBTk9WQShleGVyY2lzZXMsIGR2PSAuKHB1bHNlKSwgd2lkID0gLihpZCksIHdpdGhpbiA9IC4odGltZSksIGJldHdlZW4gPSAuKGRpZXQsIGV4ZXJ0eXBlKSwgZGV0YWlsZWQgPSBUUlVFKVxuZXgzXG5cbmBgYCJ9 -->
+<pre class="r"><code>ex3 = ezANOVA(exercises, dv= .(pulse), wid = .(id), within = .(time), between = .(diet, exertype), detailed = TRUE)
+ex3
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiSW5zdGFsbGluZyBwYWNrYWdlIGludG8g4oCYQzovVXNlcnMvQWxjaXJjbGUvRG9jdW1lbnRzL1Ivd2luLWxpYnJhcnkvMy4z4oCZXG4oYXMg4oCYbGli4oCZIGlzIHVuc3BlY2lmaWVkKVxuYWxzbyBpbnN0YWxsaW5nIHRoZSBkZXBlbmRlbmNpZXMg4oCYcmVtYXRjaOKAmSwg4oCYY2VsbHJhbmdlcuKAmSwg4oCYeG1sMuKAmVxuXG50cnlpbmcgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvY29udHJpYi8zLjMvcmVtYXRjaF8xLjAuMS56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDE0MzM2IGJ5dGVzICgxNCBLQilcbmRvd25sb2FkZWQgMTQgS0JcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvMy4zL2NlbGxyYW5nZXJfMS4xLjAuemlwJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi96aXAnIGxlbmd0aCA3NTMxNyBieXRlcyAoNzMgS0IpXG5kb3dubG9hZGVkIDczIEtCXG5cbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzMuMy94bWwyXzEuMC4wLnppcCdcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24vemlwJyBsZW5ndGggMzQ0NzYyNyBieXRlcyAoMy4zIE1CKVxuZG93bmxvYWRlZCAzLjMgTUJcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvMy4zL2dvb2dsZXNoZWV0c18wLjIuMS56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDE2MjU3MzQgYnl0ZXMgKDEuNiBNQilcbmRvd25sb2FkZWQgMS42IE1CXG4ifQ== -->
-<pre><code>Installing package into ‘C:/Users/Alcircle/Documents/R/win-library/3.3’
-(as ‘lib’ is unspecified)
-also installing the dependencies ‘rematch’, ‘cellranger’, ‘xml2’
-
-trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.3/rematch_1.0.1.zip'
-Content type 'application/zip' length 14336 bytes (14 KB)
-downloaded 14 KB
-
-trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.3/cellranger_1.1.0.zip'
-Content type 'application/zip' length 75317 bytes (73 KB)
-downloaded 73 KB
-
-trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.3/xml2_1.0.0.zip'
-Content type 'application/zip' length 3447627 bytes (3.3 MB)
-downloaded 3.3 MB
-
-trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.3/googlesheets_0.2.1.zip'
-Content type 'application/zip' length 1625734 bytes (1.6 MB)
-downloaded 1.6 MB</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiJEFOT1ZBXG4ifQ== -->
+<pre><code>$ANOVA</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDDouKCrMuccmVtYXRjaMOi4oKs4oSiIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDDouKCrMucY2VsbHJhbmdlcsOi4oKs4oSiIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDDouKCrMuceG1sMsOi4oKs4oSiIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDDouKCrMucZ29vZ2xlc2hlZXRzw6LigqzihKIgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5cblRoZSBkb3dubG9hZGVkIGJpbmFyeSBwYWNrYWdlcyBhcmUgaW5cblx0QzpcXFVzZXJzXFxBbGNpcmNsZVxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXFJ0bXBvMTNnMnNcXGRvd25sb2FkZWRfcGFja2FnZXNcbiJ9 -->
-<pre><code>package â€˜rematchâ€™ successfully unpacked and MD5 sums checked
-package â€˜cellrangerâ€™ successfully unpacked and MD5 sums checked
-package â€˜xml2â€™ successfully unpacked and MD5 sums checked
-package â€˜googlesheetsâ€™ successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-    C:\Users\Alcircle\AppData\Local\Temp\Rtmpo13g2s\downloaded_packages</code></pre>
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6OSwibnJvdyI6OH0sInJkZiI6Ikg0c0lBQUFBQUFBQUJndHlpVERpaXVCaVlHQmdZbUJtWm1KZ1lnWXlXWmlBQkNNREN3TW5pSzVnWUdBV0JqSkFIQUVnNW9CS2NHdDQ1cFdrRmlXbkZwUm9Rb1ZZVWpKVFM2QnNqdFNLMUtLU3lvSlVtRnhKWmk2TXpRdFNaNFdtZ0JNc2lLd0twZ0JaVUFoRkswU0dnWUVQWktIOUJ3WXdnTkVPREFSb0FWUWFabzZEQlZRY25mYkF3VWVqWWVZNGF2c3FHQnNibXpoTTN0NTBRN2ZwbXNNQlo0Nk9qbzQyaHdXcVFHRmpaWWZPT3U2RWJkeEpEaGxTL2t0KytXOXdXT3EyQ2dRY21uWFZMOVdxWDRDN1o0RlhHZ2hnMERQeXNQUFJhTGc1UjJSQ3NsYk9xM0xRNVRIODJwZjd6Y0g5cStxcUVvTW1CL3NkTmRxV09tSU9Rc2ZOL3ZBSlAzUmdYNXRxdWJkeGdvUEpzelpIaVVzU0RrTFhHZ0k1MHZ0ZzVsaWFmRGFzUEhuc21MMzM2UjJsVFZ0ZjJSaytXU3V3NUpDNG5VeGZEcVBEcnBmMms2dU92cnR4bTlGK2ZiWkRlb0ZraHgyajJzR1gzenJ5N2RQYUE3N0xxY1NncFNOR0xSSVlERmhrWU5ILy90NU9QU2U3UnZzTFJZci9yTHEzMlQrenZ6MWI1b1NKL1hVVlk3YzNHbzcyeDVQOW94a2FtK3hYYm5wMG10M3VsLzN0S0lzSFRWSTI5b2R5U3pWbWhhaWhwWHZXdk1UYzFHS29Xem1oZ215dWFXbXB5YkFrenV6aWxvZGdwc0NZd2NGNUNDWk1sTkVOeGlpQVdWQmdvMmRnQ2xPWkRySUx4UUdjUmZubGVqQkg4SUlERENRSnlxbEE5U0FEd0tFQmRCUVFzMFBrVVgyUW5KTllEUE1CVEpBckpiRWtVUyt0S0JHY2IvNmhhV0hQTHlqSnpNOERhbUlTaHRxQXJKbXhDRTJBdnpRUDVNSVUzZVNNMHJ4c1hVT1FCVkJYTWtKZHpRaDFPWXpOQ2JHUzZUL1VLRlpZMEtibXBXZm13Ykk1YTA1aVVtb09sTU1IREFsd1FPZ1ZGR1htd1VLZkN5aGFyRmVTWDVJSVU4ZVZuSjhERXdIN2plRWZBR2dUZm1IZ0JBQUEifQ== -->
+<div data-pagedtable>
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Effect"],"name":[1],"type":["chr"],"align":["left"]},{"label":["DFn"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["DFd"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["SSn"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["SSd"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["F"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["p"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["p<.05"],"name":[8],"type":["chr"],"align":["left"]},{"label":["ges"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"(Intercept)","2":"1","3":"24","4":"894608.1000","5":"2085.2","6":"10296.659505","7":"4.034818e-33","8":"*","9":"0.99593791","_rn_":"1"},{"1":"diet","2":"1","3":"24","4":"1261.8778","5":"2085.2","6":"14.523819","7":"8.482600e-04","8":"*","9":"0.25696611","_rn_":"2"},{"1":"exertype","2":"2","3":"24","4":"8326.0667","5":"2085.2","6":"47.915212","7":"4.166101e-09","8":"*","9":"0.69529515","_rn_":"3"},{"1":"time","2":"2","3":"48","4":"2066.6000","5":"1563.6","6":"31.720645","7":"1.662197e-09","8":"*","9":"0.36158449","_rn_":"5"},{"1":"diet:exertype","2":"2","3":"24","4":"815.7556","5":"2085.2","6":"4.694546","7":"1.902303e-02","8":"*","9":"0.18271820","_rn_":"4"},{"1":"diet:time","2":"2","3":"48","4":"192.8222","5":"1563.6","6":"2.959666","7":"6.136514e-02","8":"","9":"0.05019292","_rn_":"6"},{"1":"exertype:time","2":"4","3":"48","4":"2723.3333","5":"1563.6","6":"20.900486","7":"4.991713e-10","8":"*","9":"0.42738172","_rn_":"7"},{"1":"diet:exertype:time","2":"4","3":"48","4":"613.6444","5":"1563.6","6":"4.709474","7":"2.750071e-03","8":"*","9":"0.14396538","_rn_":"8"}],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[8]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4kYE1hdWNobHkncyBUZXN0IGZvciBTcGhlcmljaXR5YFxuIn0= -->
+<pre><code>
+$`Mauchly's Test for Sphericity`</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6NH0sInJkZiI6Ikg0c0lBQUFBQUFBQUJndHlpVERpaXVCaVlHQmdZbUJtWm1KZ1lnWXlXWmlBQkNNREN3TW5pSzVnWUdBV0Jva0NzUUNZaGtpd2xHVG1wa0xabkNtWnFTVldTQUs4cVJXcFJTV1ZCYW5JZ2tKZ1ZhZ3lEQXg4SUxQczMwN2FYSE41d2dKY05GemR6V3Q5ZmRxeFFyaG9ORGN5NEtSUlBjbWFsNWliV295bW1jMDFMUzAxdVFRV0R1RXdSZ0ZNVTRHTm5vRXBta21jUmZubGVqRFRlS0hCeGdveURZalpnWmdEM2Vya25NUmltTlV3UWE2VXhKSkV2YlNpUkhBSS9VUFR3cDVmVUpLWm53ZlV4Q1FNTlIxWk0yTVJtZ0IvYVI3SVJTbTZ5Um1sZWRtNmhpQUx3TklRekF1bFdWRFpJQ3VaL2tPTllvV0ZTV3BlZW1ZZUxFSlpjeEtUVW5PZ0hENmd6OEVlMXlzb3lzeURCUnNYVUxSWXJ5Uy9KQkdtamlzNVB3Y21Bdllid3o4QVBTb0pySVlDQUFBPSJ9 -->
+<div data-pagedtable>
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Effect"],"name":[1],"type":["chr"],"align":["left"]},{"label":["W"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["p"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["p<.05"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"time","2":"0.9241579","3":"0.4037205","4":"","_rn_":"5"},{"1":"diet:time","2":"0.9241579","3":"0.4037205","4":"","_rn_":"6"},{"1":"exertype:time","2":"0.9241579","3":"0.4037205","4":"","_rn_":"7"},{"1":"diet:exertype:time","2":"0.9241579","3":"0.4037205","4":"","_rn_":"8"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4kYFNwaGVyaWNpdHkgQ29ycmVjdGlvbnNgXG4ifQ== -->
+<pre><code>
+$`Sphericity Corrections`</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6NywibnJvdyI6NH0sInJkZiI6Ikg0c0lBQUFBQUFBQUJndHlpVERpaXVCaVlHQmdZbUJtWm1KZ1lnWXlXWmlBQkNNREN3TW5pSzVnWUdBV0JqTFlnVmdBSkF1VllDbkp6RTJGc2psVE1sTkxySkFFZUZNclVvdEtLZ3RTa1FXRndLcFFaUmdZK0VCbTJiL2RWLy8zYlAwZFhEUk1uWjM1NG5iTmlyZ0g5aHN1Y2lxdUsrU3prNThmTTJmRytvdjJ1Wm1kazFTM3A2TzVrVkVMeW1CQUZ3QXlZRlovRUx4LzZNS3JiRncwM0dxWnZoeEdoMTB2N2Rkbk82UVhTSGJZTWFvZGZQbXRJOTgrclQzZ3U1eEtERWxXb3dReGExNWlibW94VkQ4N1ZKRE5OUzB0TmJrRXltTjJkNGVGSW10QnRMdDdMQ3pnd1J3YlBRTlRtRUlQTnlTRkhtNUlDb0Vjc0VKVXl6bUw4c3YxWUE3Z0Jic1dxQlhrQUdpY2M2QzdOamtuc1JqbVdwZ2dWMHBpU2FKZVdsRWlPRXIvb1dsaHp5OG95Y3pQQTJwaUVvYWFqcXlac1FoTmdMODBEK1NpRk4za2pOSzhiRjFEa0FWZ2FRam1oZElzU0d4MmlKVk0vNkZHc2NLQ01UVXZQVE1QSGlRNWlVbXBPVkFPSDlEbllJL3JGUlJsNXNGQ21nc29XcXhYa2wrU0NGUEhsWnlmQXhNQis0M2hId0N4TDIwME53TUFBQT09In0= -->
+<div data-pagedtable>
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Effect"],"name":[1],"type":["chr"],"align":["left"]},{"label":["GGe"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["p[GG]"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["p[GG]<.05"],"name":[4],"type":["chr"],"align":["left"]},{"label":["HFe"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["p[HF]"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["p[HF]<.05"],"name":[7],"type":["chr"],"align":["left"]}],"data":[{"1":"time","2":"0.9295044","3":"5.503833e-09","4":"*","5":"1.004364","6":"1.662197e-09","7":"*","_rn_":"5"},{"1":"diet:time","2":"0.9295044","3":"6.568963e-02","4":"","5":"1.004364","6":"6.136514e-02","7":"","_rn_":"6"},{"1":"exertype:time","2":"0.9295044","3":"1.840672e-09","4":"*","5":"1.004364","6":"4.991713e-10","7":"*","_rn_":"7"},{"1":"diet:exertype:time","2":"0.9295044","3":"3.590363e-03","4":"*","5":"1.004364","6":"2.750071e-03","7":"*","_rn_":"8"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTkFcbiJ9 -->
+<pre><code>NA</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -217,7 +223,7 @@ The downloaded binary packages are in
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQoNCmluc3RhbGwucGFja2FnZXMoImRldnRvb2xzIikNCmluc3RhbGxfZ2l0aHViKCJza2FyZGhhbWFyL3JnYSIsIGZvcmNlID0gVFJVRSkNCmluc3RhbGwucGFja2FnZXMoImh0dHIiKQ0KaW5zdGFsbC5wYWNrYWdlcygieGxzeCIpDQppbnN0YWxsLnBhY2thZ2VzKCJST0RCQyIpDQppbnN0YWxsLnBhY2thZ2VzKCJSTXlTUUwiKQ0KaW5zdGFsbC5wYWNrYWdlcygic3ZnbGl0ZSIpDQp2aWduZXR0ZSgiZm9udHMiKQ0KaW5zdGFsbC5wYWNrYWdlcygic3RyaW5naSIpDQppbnN0YWxsLnBhY2thZ2VzKCJjYXJldCIpDQppbnN0YWxsLnBhY2thZ2VzKCJzdHJpbmdyIikNCmluc3RhbGwucGFja2FnZXMoImNocm9uIikNCmluc3RhbGwucGFja2FnZXMoIkhtaXNjIikNCmluc3RhbGwucGFja2FnZXMoInJhcHBvcnRvb2xzIikNCmluc3RhbGwucGFja2FnZXMoIm91dGxpZXJzIikNCmluc3RhbGwucGFja2FnZXMoImdvb2dsZXNoZWV0cyIpDQppbnN0YWxsLnBhY2thZ2VzKCJwc3ljaCIpDQppbnN0YWxsLnBhY2thZ2VzKCJleiIpDQoNCg0KDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQojaHR0cHM6Ly93d3cuci1ibG9nZ2Vycy5jb20vcmVwZWF0ZWQtbWVhc3VyZXMtYW5vdmEtaW4tci1leGVyY2lzZXMvDQoNCiNMb2FkIHRoZSBkYXRhIGFuZCBpbnNwZWN0IGl0cyBzdHJ1Y3R1cmUNCnN1cHByZXNzTWVzc2FnZXMobGlicmFyeShmb3JlaWduKSkNCmV4ZXJjaXNlcyA9IHJlYWQuY3N2KCJleGVyLmNzdiIpDQphdHRhY2goZXhlcmNpc2VzKQ0KaGVhZChleGVyY2lzZXMpDQoNCiNDaGVjayBmb3IgbWlzc2luZyB2YWx1ZXMNCnNhcHBseShleGVyY2lzZXMsIGZ1bmN0aW9uKHgpIHN1bShpcy5uYSh4KSkpDQojY2hlY2sgc3RydWN0dXJlIG9mIGRhdGEgYW5kIHBlcmZvcm0gbmVjZXNzYXJ5IGNvbnZlcnNpb24gdG8gZmFjdG9ycw0Kc3RyKGV4ZXJjaXNlcykNCmV4ZXJjaXNlcyR0aW1lID0gYXMuZmFjdG9yKHRpbWUpDQpleGVyY2lzZXMkZXhlcnR5cGUgPSBhcy5mYWN0b3IoZXhlcnR5cGUpDQpleGVyY2lzZXMkZGlldCA9IGFzLmZhY3RvcihkaWV0KQ0KZXhlcmNpc2VzJGlkID0gYXMuZmFjdG9yKGlkKQ0KDQojQ2hlY2sgZm9yIGJhbGFuY2UgaW4gYmV0d2Vlbi1zdWJqZWN0cyBmYWN0b3INCnRhYmxlKGRpZXQpDQp0YWJsZShleGVydHlwZSkNCnRhYmxlKGRpZXQsIGV4ZXJ0eXBlKQ0KI1RoZSBkZXNpZ24gaXMgYmFsYW5jZWQNCg0KI0dlbmVyYXRlIGRlc2NyaXB0aXZlIHN0YXRpc3RpY3MgZm9yIHRoZSBzZXggdmFyaWFibGUgd2hpY2ggaXMgYSBiZXR3ZWVuIHN1YmplY3RzIGZhY3Rvcg0KI0Rlc2NyaXB0aXZlIHN0YXRpc3RpY3MgYXJlIHVzZWQgdG8gZGVzY3JpYmUgdGhlIGJhc2ljIGZlYXR1cmVzIG9mIHRoZSBkYXRhIGluIGEgc3R1ZHkuIFRoZXkgcHJvdmlkZSBzaW1wbGUgc3VtbWFyaWVzIGFib3V0IHRoZSBzYW1wbGUgYW5kIHRoZSBtZWFzdXJlcy4gVG9nZXRoZXIgd2l0aCBzaW1wbGUgZ3JhcGhpY3MgYW5hbHlzaXMsIHRoZXkgZm9ybSB0aGUgYmFzaXMgb2YgdmlydHVhbGx5IGV2ZXJ5IHF1YW50aXRhdGl2ZSBhbmFseXNpcyBvZiBkYXRhLg0KI2dldCBkZXNjcmlwdGl2ZSBzdGF0aXN0aWNzIGFjcm9zcyB0aGUgZGlldCB2YXJpYWJsZQ0KaWYoIXJlcXVpcmUocHN5Y2gpKXsNCiAgICBpbnN0YWxsLnBhY2thZ2VzKCJwc3ljaCIpDQp9DQpsaWJyYXJ5KHBzeWNoKQ0KZGVzY3JpYmVCeShwdWxzZSwgZGlldCkNCg0KI0dlbmVyYXRlIGRlc2NyaXB0aXZlIHN0YXRpc3RpY3MgZm9yIHRoZSB0cmVhdG1lbnQgbGV2ZWwgdmFyaWFibGUgd2hpY2ggaXMgYSBiZXR3ZWVuIHN1YmplY3RzIGZhY3Rvcg0KI2dldCBkZXNjcmlwdGl2ZSBzdGF0aXN0aWNzIGFjcm9zcyBleGVyY2lzZSB0eXBlDQpkZXNjcmliZUJ5KHB1bHNlLCBleGVydHlwZSkNCg0KI0dlbmVyYXRlIGRlc2NyaXB0aXZlIHN0YXRpc3RpY3MgZm9yIHRoZSB3ZWVrcyB2YXJpYWJsZSB3aGljaCBpcyB0aGUgd2l0aGluIHN1YmplY3RzIGZhY3Rvcg0KI2dldCBkZXNjcmlwdGl2ZSBzdGF0aXN0aWNzIGFjcm9zcyB0aW1lIHBvaW50cw0KZGVzY3JpYmVCeShwdWxzZSwgdGltZSkNCg0KI1VzZSBoaXN0b2dyYW1zIHRvIGFzc2VzcyBkaXN0cmlidXRpb24gYWNyb3NzIHdpdGhpbiBzdWJqZWN0cyBmYWN0b3IuDQpsaWJyYXJ5KGdncGxvdDIpDQpnZ3Bsb3QoZXhlcmNpc2VzLGFlcyh4PXB1bHNlKSkgKyBnZW9tX2hpc3RvZ3JhbShiaW53aWR0aCA9IDMsYWVzKHk9Li5kZW5zaXR5Li4pKSArIGZhY2V0X2dyaWQoLiB+IHRpbWUpICsgZ2VvbV9kZW5zaXR5KGNvbD0zKQ0KI29ic2VydmF0aW9ucyBhdCB0aW1lIHBvaW50cyAyIGFuZCAzIHNlZW0gdG8gZGVwYXJ0IGZyb20gbm9ybWFsaXR5DQoNCiNQZXJmb3JtIGEgcmVwZWF0ZWQgbWVhc3VyZXMgYW5hbHlzaXMgd2l0aCBvbmx5IHRoZSB3aXRoaW4gc3ViamVjdHMgZmFjdG9yDQojZnVuY3Rpb24gZXpBbm92YSBpcyBvbmUgb2YgdGhlIHdheXMgd2UgY2FuIGRvIHJlcGVhdGVkIG1lYXN1cmVzDQojd2Ugd2lsbCB1c2UgbGlicmFyeSBleiwgc28geW91IG5lZWQgdG8gaW5zdGFsbCBpdA0KaWYoIXJlcXVpcmUoZXopKXsNCiAgICBpbnN0YWxsLnBhY2thZ2VzKCJleiIpDQp9DQpsaWJyYXJ5KGV6KQ0KI3BlcmZvcm0gYW5hbHlzaXMgd2l0aCBvbmx5IHRoZSB3aXRoaW4gc3ViamVjdCBmYWN0b3INCmV4MSA9IGV6QU5PVkEoZXhlcmNpc2VzLCBkdiA9IC4ocHVsc2UpLCB3aWQgPSAuKGlkKSwgd2l0aGluID0gLih0aW1lKSwgZGV0YWlsZWQgPSBUUlVFKQ0KZXgxDQoNCiNQZXJmb3JtIGEgcmVwZWF0ZWQgbWVhc3VyZXMgYW5hbHlzaXMgd2l0aCB0aGUgd2l0aGluIHN1YmplY3RzIGZhY3RvciBhbmQgb25lIGJldHdlZW4gc3ViamVjdHMgZmFjdG9yDQpleDIgPSBlekFOT1ZBKGV4ZXJjaXNlcywgZHY9IC4ocHVsc2UpLCB3aWQgPSAuKGlkKSwgd2l0aGluID0gLih0aW1lKSwgYmV0d2VlbiA9IC4oZGlldCksIGRldGFpbGVkID0gVFJVRSkNCmV4Mg0KDQojUGVyZm9ybSBhIHJlcGVhdGVkIG1lYXN1cmVzIGFuYWx5c2lzIHdpdGggdGhlIHdpdGhpbiBzdWJqZWN0cyBmYWN0b3IgYW5kIHR3byBiZXR3ZWVuIHN1YmplY3RzIGZhY3RvcnMNCmV4MyA9IGV6QU5PVkEoZXhlcmNpc2VzLCBkdj0gLihwdWxzZSksIHdpZCA9IC4oaWQpLCB3aXRoaW4gPSAuKHRpbWUpLCBiZXR3ZWVuID0gLihkaWV0LCBleGVydHlwZSksIGRldGFpbGVkID0gVFJVRSkNCmV4Mw0KDQoNCg0KYGBgDQoNCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDdHJsK0FsdCtJKi4NCg0KV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDdHJsK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuDQo=</div>
 
 
 
