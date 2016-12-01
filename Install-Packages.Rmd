@@ -27,6 +27,9 @@ install.packages("outliers")
 install.packages("googlesheets")
 install.packages("psych")
 install.packages("ez")
+install.packages("twitteR")
+install.packages("SchedulerR")
+
 
 
 

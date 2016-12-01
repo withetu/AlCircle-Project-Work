@@ -1,0 +1,60 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+# https://www.r-bloggers.com/extract-twitter-data-automatically-using-scheduler-r-package/
+
+if(!require(twitteR)){
+    install.packages("twitteR")
+}
+library(twitteR)
+
+if(!require(httr)){
+    install.packages("httr")
+}
+library(httr)
+
+if(!require(SchedulerR)){
+    install.packages("SchedulerR")
+}
+library(SchedulerR)
+
+#https://apps.twitter.com/app/9505989/keys
+api_key <- "q9BszUjo3xl50Y1713xiEHRFz"
+api_secret <- "NRKpG2DUQ1KJRolsthvn6gcJUBNUymwMv11vYdKqiUUaQZRD2A"
+access_token <- "242258211-hmKdtSSaelo69LuFLZAe9s1bKKaDXme5PdTpYhCg"
+access_token_secret <- "StWMGyLJdwy6npXozbRXDWr9skALhWGmzwpIVwQDDYSQQ"
+setup_twitter_oauth(api_key,api_secret,access_token,access_token_secret)
+
+#Extract the tweets using usertimeline function from the Twitter R package
+clinton_tweets <- userTimeline("Aluminium", n = 3200)
+tweetsc.df <- twListToDF(clinton_tweets)
+dim(tweetsc.df)
+
+#Create a variable called date and become to character
+date <- Sys.Date()
+date <- as.character(date)
+name <- paste(date, ".RData")
+#Finally we save the Rdata using as name the date from the download
+save(tweetsc.df, file =name)
+
+taskscheduler_create(taskname = "taskclinton", rscript = clintontweets, 
+  schedule = "DAILY", starttime = "11:30", startdate = format(Sys.Date(), "%d/%m/%Y"))
+
+                         
+   
+  
+                                 *** INCOMPLETED ***
+
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
