@@ -8,29 +8,13 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
 
 ```{r}
+#http://datascienceplus.com/introduction-to-time-series-with-json-data/
 
-install.packages("devtools")
-install_github("skardhamar/rga", force = TRUE)
-install.packages("httr")
-install.packages("xlsx")
-install.packages("RODBC")
-install.packages("RMySQL")
-install.packages("svglite")
-vignette("fonts")
-install.packages("stringi")
-install.packages("caret")
-install.packages("stringr")
-install.packages("chron")
-install.packages("Hmisc")
-install.packages("rapportools")
-install.packages("outliers")
-install.packages("googlesheets")
-install.packages("psych")
-install.packages("ez")
-install.packages("twitteR")
-install.packages("SchedulerR")
-install.packages("rjson")
+library(rjson)
+jsonfile <- "https://controllerdata.lacity.org/api/views/s234-w655/rows.json"
 
+#Extract JSON data using rjson
+rev <- fromJSON(txt=jsonfile)
 
 
 ```

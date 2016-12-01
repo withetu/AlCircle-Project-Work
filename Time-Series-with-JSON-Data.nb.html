@@ -143,7 +143,7 @@ $(document).ready(function () {
 <script src="data:application/x-javascript;base64,Cgp3aW5kb3cuaW5pdGlhbGl6ZVNvdXJjZUVtYmVkID0gZnVuY3Rpb24oZmlsZW5hbWUpIHsKICAkKCIjcm1kLWRvd25sb2FkLXNvdXJjZSIpLmNsaWNrKGZ1bmN0aW9uKCkgewogICAgdmFyIHNyYyA9IHdpbmRvdy5hdG9iKCQoIiNybWQtc291cmNlLWNvZGUiKS5odG1sKCkpOwogICAgdmFyIGJsb2IgPSBuZXcgQmxvYihbc3JjXSwge3R5cGU6ICJ0ZXh0L3gtci1tYXJrZG93biJ9KTsKICAgIHNhdmVBcyhibG9iLCBmaWxlbmFtZSk7CiAgfSk7Cn07Cg=="></script>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("Install-Packages.Rmd");
+  window.initializeSourceEmbed("Time-Series-with-JSON-Data.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -177,12 +177,12 @@ $(document).ready(function () {
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Ctrl+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcInJqc29uXCIpXG5cbmBgYCJ9 -->
-<pre class="r"><code>install.packages(&quot;rjson&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmV2IDwtIGZyb21KU09OKHR4dD1qc29uZmlsZSlcblxuYGBgIn0= -->
+<pre class="r"><code>rev &lt;- fromJSON(txt=jsonfile)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gaW5zdGFsbC5wYWNrYWdlcyA6IFVwZGF0aW5nIGxvYWRlZCBwYWNrYWdlc1xuIn0= -->
-<pre><code>Error in install.packages : Updating loaded packages</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gZnJvbUpTT04odHh0ID0ganNvbmZpbGUpIDogdW51c2VkIGFyZ3VtZW50ICh0eHQgPSBqc29uZmlsZSlcbiJ9 -->
+<pre><code>Error in fromJSON(txt = jsonfile) : unused argument (txt = jsonfile)</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -190,7 +190,7 @@ $(document).ready(function () {
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQoNCmluc3RhbGwucGFja2FnZXMoImRldnRvb2xzIikNCmluc3RhbGxfZ2l0aHViKCJza2FyZGhhbWFyL3JnYSIsIGZvcmNlID0gVFJVRSkNCmluc3RhbGwucGFja2FnZXMoImh0dHIiKQ0KaW5zdGFsbC5wYWNrYWdlcygieGxzeCIpDQppbnN0YWxsLnBhY2thZ2VzKCJST0RCQyIpDQppbnN0YWxsLnBhY2thZ2VzKCJSTXlTUUwiKQ0KaW5zdGFsbC5wYWNrYWdlcygic3ZnbGl0ZSIpDQp2aWduZXR0ZSgiZm9udHMiKQ0KaW5zdGFsbC5wYWNrYWdlcygic3RyaW5naSIpDQppbnN0YWxsLnBhY2thZ2VzKCJjYXJldCIpDQppbnN0YWxsLnBhY2thZ2VzKCJzdHJpbmdyIikNCmluc3RhbGwucGFja2FnZXMoImNocm9uIikNCmluc3RhbGwucGFja2FnZXMoIkhtaXNjIikNCmluc3RhbGwucGFja2FnZXMoInJhcHBvcnRvb2xzIikNCmluc3RhbGwucGFja2FnZXMoIm91dGxpZXJzIikNCmluc3RhbGwucGFja2FnZXMoImdvb2dsZXNoZWV0cyIpDQppbnN0YWxsLnBhY2thZ2VzKCJwc3ljaCIpDQppbnN0YWxsLnBhY2thZ2VzKCJleiIpDQppbnN0YWxsLnBhY2thZ2VzKCJ0d2l0dGVSIikNCmluc3RhbGwucGFja2FnZXMoIlNjaGVkdWxlclIiKQ0KaW5zdGFsbC5wYWNrYWdlcygicmpzb24iKQ0KDQoNCg0KYGBgDQoNCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDdHJsK0FsdCtJKi4NCg0KV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDdHJsK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQojaHR0cDovL2RhdGFzY2llbmNlcGx1cy5jb20vaW50cm9kdWN0aW9uLXRvLXRpbWUtc2VyaWVzLXdpdGgtanNvbi1kYXRhLw0KDQpsaWJyYXJ5KHJqc29uKQ0KanNvbmZpbGUgPC0gImh0dHBzOi8vY29udHJvbGxlcmRhdGEubGFjaXR5Lm9yZy9hcGkvdmlld3MvczIzNC13NjU1L3Jvd3MuanNvbiINCg0KI0V4dHJhY3QgSlNPTiBkYXRhIHVzaW5nIHJqc29uDQpyZXYgPC0gZnJvbUpTT04odHh0PWpzb25maWxlKQ0KDQoNCmBgYA0KDQpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ3RybCtBbHQrSSouDQoNCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ3RybCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLg0K</div>
 
 
 
