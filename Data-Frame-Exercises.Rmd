@@ -146,11 +146,20 @@ df
 # Create a data frame XY
 # X=c(1,2,3,1,4,5,2)
 # Y=c(0,3,2,0,5,9,3)
-#X=c(1,2,3,1,4,5,2)
-#Y=c(0,3,2,0,5,9,3)
-#XY=data.frame(X,Y)
+X=c(1,2,3,1,4,5,2)
+Y=c(0,3,2,0,5,9,3)
+XY=data.frame(X,Y)
+XY
 #1)looks at duplicated elements using a provided R function.
+duplicated(XY)
+#2) keeps only the uniques lines on XY using a provided R function.
+unique(XY)
 
+# For this exercise, we'll use the (built-in) dataset Titanic.
+# a) Make sure the object is a data frame, if not change it to a data frame.
+# b) Define a data frame with value 1st in Class variable, and value NO in Survived variable
+# and variables Sex, Age and Freq.
+subset(data.frame(Titanic), subset = Class=='1st' & Survived=='No', select = c(Sex, Age, Freq))
 
 
 ```
