@@ -1,0 +1,69 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+#https://www.r-bloggers.com/extracting-tables-from-pdfs-in-r-using-the-tabulizer-package/
+
+#First, we will need to load the tabulizer package as well as dplyr.
+if(!require(tabulizer)){
+    install.packages("tabulizer")
+}
+library(tabulizer)
+#use the below two code line, as R 3.3.2 does not support "tabulizer" package
+#ref: https://github.com/ropenscilabs/tabulizer/issues/14
+install.packages("ghit")
+ghit::install_github(c("leeper/tabulizerjars", "leeper/tabulizer"), INSTALL_opts = "--no-multiarch")
+
+library(dplyr)
+
+#Next we will use the extract_tables() function from tabulizer
+# Location of WARN notice pdf file
+location <- 'http://www.edd.ca.gov/jobs_and_training/warn/WARN-Report-for-7-1-2016-to-10-25-2016.pdf'
+
+#Extract the table
+out <- extract_tables(location)
+
+#We want to combine these into a single data matrix containing all of the data. We can do so most elegantly by combining do.call and rbind, passing it our list of matrices. Notice that I am excluding the last page here. The final page is the totals and summary information. We don’t need that.
+final <- do.call(rbind, out[-length(out)])
+
+#After doing so, the first three rows of the matrix contain the headers, which have not been formatted well since they take up multiple rows of the pdf table. Let’s fix that. Here I turn the matrix into a data.frame dropping the first three rows. Then I create a character vector containing the formatted headers and use that as the column names.
+# table headers get extracted as rows with bad formatting. Dump them.
+final <- as.data.frame(final[3:nrow(final), ])
+# Column names
+headers <- c('Notice.Date', 'Effective.Date', 'Received.Date', 'Company', 'City', 'No.Of.Employees', 'Layoff/Closure')
+# Apply custom column names
+names(final) <- headers
+
+#We now have a data.frame of all of the California layoffs. A quick glance at the first few rows:
+head(final)
+
+#In order to manipulate the data properly , we will probably want to change the date column to a Date object as well as convert the No.of.Employees column to numeric. Here I do so using dplyr.
+# These dplyr steps are not strictly necessary for dumping to csv, but useful if further data manipulation in R is required.
+final <- final %>%
+    # Convert date columns to date objects
+    mutate_each(funs(as.Date(., format = '%m/%d/%y')),
+               Notice.Date, Effective.Date, Received.Date) %>%
+    # Convert No.of.Employees to numeric
+    mutate(No.Of.Employees = as.numeric(levels(No.Of.Employees)[No.Of.Employees]))
+
+#Last of all, I finish up by writing the final table to csv so that I can load it for later use.
+# Write final table to disk
+write.csv(final, file = 'CA_WARN.csv', row.names = FALSE)
+
+
+
+
+
+
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).

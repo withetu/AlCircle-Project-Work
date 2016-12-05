@@ -30,6 +30,7 @@ install.packages("ez")
 install.packages("twitteR")
 install.packages("SchedulerR")
 install.packages("rjson")
+install.packages("tabulizer")
 
 
 
