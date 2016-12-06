@@ -57,7 +57,14 @@ final <- final %>%
 write.csv(final, file = 'CA_WARN.csv', row.names = FALSE)
 
 
-
+location <- 'http://admin.alcircle.com/flyer/images/Alu-Germany.pdf'
+out <- extract_tables(location)
+final <- do.call(rbind, out[-length(out)])
+final <- as.data.frame(final[3:nrow(final), ])
+headers <- c('Company', 'City', 'Country', 'Booth')
+names(final) <- headers
+head(final)
+write.csv(final, file = 'Alu-Germany.csv', row.names = FALSE)
 
 
 
