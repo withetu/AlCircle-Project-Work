@@ -1,0 +1,52 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+#http://r-exercises.com/2016/11/27/string-manipulation-exercises/
+
+# Load text from the file and print it on screen. Text file contains excerpt from novel “Gambler” by Fyodor Dostoyevsky.
+gambler <- readLines("http://r-exercises.com/wp-content/uploads/2016/11/gambler.txt")
+noquote(gambler)
+
+# How many paragraphs is there in the excerpt?
+length(gambler)
+
+# How many characters is there in the excerpt
+nchar(gambler)
+
+# Collapse paragraphs into one and display it on the screen (un-list it).
+t <- paste(gambler, collapse = "\n")
+cat(t)
+
+# Convert the text to uppercase and save it to new file “gambler-upper.txt”.
+cat(toupper(gambler), file = "gambler-upper.txt")
+
+# Change all letters ‘a’ and ‘t’ to ‘A’ and ‘T’.
+chartr("at", "AT", gambler)
+
+# Does the text contain word ‘lucky’?
+'lucky' %in% gambler
+
+# How many words are there in the excerpt, assuming that words are sub-strings separated by space or new line character?
+w <- strsplit(t, " ")
+length(w[[1]])
+
+# How many times is word money repeated in the excerpt?
+sum(w[[1]][] == 'money')
+
+# Ask the user to input two numbers, divide them and display both numbers and the result on the screen, each of them formatted to 2 decimal places.
+numbers <- scan(n=2)
+sprintf("%.2f / %.2f = %.2f", numbers[1], numbers[2], numbers[1]/numbers[2])
+
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
