@@ -64,6 +64,14 @@ if (z=='i') n=3 else
 if (z=='o') n=4 else n=5
 n
 
+#What is the output n of:
+z='u'
+if(z %in% letters)
+    if(z=='a') n=1 else
+        if(z=='e') n=2 else
+            if(z=='i') n=3 else
+                if(z=='o') n=4 else n=5
+n
 
 
 ```
