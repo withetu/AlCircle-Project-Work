@@ -16,6 +16,8 @@ jsonfile <- "https://controllerdata.lacity.org/api/views/s234-w655/rows.json"
 #Extract JSON data using rjson
 rev <- fromJSON(txt=jsonfile)
 
+                 *** INCOMPLETED ***
+
 
 ```
 
