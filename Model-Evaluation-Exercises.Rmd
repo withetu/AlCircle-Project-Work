@@ -79,6 +79,7 @@ table(Test$Cont, pred>0.5)
 #d) What is the overall error rate?    
 (4+6)/22
 (5+7)/22
+
     
 ```
 

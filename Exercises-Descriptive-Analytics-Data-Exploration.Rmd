@@ -271,6 +271,42 @@ flights %>%
 #https://github.com/VasTsak/r-exercises/blob/master/data_manipulation_prerequisite.R
 
 
+
+
+# Part 5 : Data Visualisation 
+
+
+library(ggplot2)
+library(dplyr)
+
+#Develop an histogram which illustrates the TaxIn variable.
+ggplot(flights, aes(x = TaxiIn))+
+    geom_histogram()
+
+#Let’s make things a bit fancier, illustrate the histogram of TaxiIn variable, with range from 0 to 50, while they break by 2 ,the highest values will be filled with red and the lowest will be filled with green and finally add a title.
+ggplot(flights, aes(x = TaxiIn))+
+    geom_histogram(breaks=seq(0, 50, by = 2), col="red", aes(fill=..count..))+
+    scale_fill_gradient("Count", low="green", high = "red")+
+    labs(title="Histogram for TaxIn Time")
+
+#Make a scatter plot of ArrDelay in respect to Full_Date while illustrating each carrier with a different colour.
+ggplot(flights,
+       aes(x=Full_Date,
+           y=ArrDelay,
+           color= UniqueCarrier))+
+  geom_point()
+
+#Create a new variable called mean_delay which is the mean of ArrDelay for each carrier every day.
+#Now make a scatter plot of Mean_ArrDelay in respect to Full_Date while illustrating each carrier with a different colour.
+mean_delay <- flights %>%
+    group_by(Full_Date, UniqueCarrier)%>%
+    summarise(Mean_ArrDelay=mean(ArrDelay))
+
+p <- ggplot(mean_delay, aes(x=Full_Date, y=Mean_ArrDelay, color= UniqueCarrier))
+p+geom_point()
+
+#    Exercise 5
+
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.

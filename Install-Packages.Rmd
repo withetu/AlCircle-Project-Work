@@ -10,7 +10,7 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 ```{r}
 
 install.packages("devtools")
-install_github("skardhamar/rga", force = TRUE)
+install_github("skardhamar/rga", force = TRUE)  #not installed in new system
 install.packages("httr")
 install.packages("xlsx")
 install.packages("RODBC")
@@ -31,6 +31,9 @@ install.packages("twitteR")
 install.packages("SchedulerR")
 install.packages("rjson")
 install.packages("tabulizer")
+install.packages("XML")
+install.packages("RCurl")
+install.packages("bitops")
 
 
 
