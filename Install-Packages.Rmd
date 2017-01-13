@@ -34,6 +34,20 @@ install.packages("tabulizer")
 install.packages("XML")
 install.packages("RCurl")
 install.packages("bitops")
+install.packages("wordcloud2")
+install.packages("webshot")
+install.packages("sqldf")
+install.packages("PASWR")
+install.packages("rvest")
+install.packages("corrgram")
+install.packages("RGoogleAnalytics")
+install.packages("shiny")
+install.packages("rsconnect")
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("ggmap")
+
+
 
 
 
