@@ -46,6 +46,10 @@ install.packages("rsconnect")
 install.packages("ggplot2")
 install.packages("dplyr")
 install.packages("ggmap")
+install.packages("pdftools")
+install.packages("tree")
+install.packages("ROCR")
+
 
 
 
