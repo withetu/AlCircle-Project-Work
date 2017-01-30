@@ -52,6 +52,7 @@ install.packages("ROCR")
 install.packages("rpart.plot")
 install.packages("googleAnalyticsR")
 install.packages("xml2")
+install.packages("searchConsoleR")
 
 
 
