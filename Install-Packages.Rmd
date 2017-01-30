@@ -50,6 +50,8 @@ install.packages("pdftools")
 install.packages("tree")
 install.packages("ROCR")
 install.packages("rpart.plot")
+install.packages("googleAnalyticsR")
+install.packages("xml2")
 
 
 
