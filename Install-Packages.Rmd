@@ -53,6 +53,11 @@ install.packages("rpart.plot")
 install.packages("googleAnalyticsR")
 install.packages("xml2")
 install.packages("searchConsoleR")
+install.packages("tidyverse")
+install.packages("stringr")
+install.packages("forcats")
+install.packages("ggmap")
+install.packages("rvest")
 
 
 
