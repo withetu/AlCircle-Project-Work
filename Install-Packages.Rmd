@@ -58,6 +58,7 @@ install.packages("stringr")
 install.packages("forcats")
 install.packages("ggmap")
 install.packages("rvest")
+install.packages("extrafont")
 
 
 
