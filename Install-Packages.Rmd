@@ -59,6 +59,12 @@ install.packages("forcats")
 install.packages("ggmap")
 install.packages("rvest")
 install.packages("extrafont")
+install.packages("plotly")
+if(!require(zoo)){
+  install.packages("zoo")
+}
+library(zoo)
+
 
 
 
