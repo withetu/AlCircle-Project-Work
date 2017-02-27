@@ -65,6 +65,12 @@ if(!require(zoo)){
 }
 library(zoo)
 
+if(!require(raster)){
+  install.packages("raster")
+}
+library(raster)
+
+
 
 
 
