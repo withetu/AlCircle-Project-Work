@@ -70,6 +70,10 @@ if(!require(raster)){
 }
 library(raster)
 
+if(!require(rgdal)){
+  install.packages("rgdal")
+}
+library(rgdal)
 
 
 
