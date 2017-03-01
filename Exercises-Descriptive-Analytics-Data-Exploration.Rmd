@@ -609,6 +609,98 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 
 
+
+
+
+
+
+#=========================================================================================
+#http://r-exercises.com/2017/01/03/descriptive-analytics-part-6-interactive-dashboard-12/
+#Descriptive Analytics-Part 6: Interactive dashboard ( 1/2)
+#=========================================================================================
+
+
+
+#Create the user interface and set as the header of the web app : “Descriptive Analysis”
+#Create a side panel.
+#Create a select list input control that contains the functions : summary, str, head, tail, names, summary. 
+#Create a select list input control that contains the functions : mean, median, max, min, range, sd.
+#Create a select list input control that contains the variables : ActualElapsedTime, CRSElapsedTime, AirTime, ArrDelay, DepDelay, TaxiIn, TaxiOut.
+#Create a main panel.
+#Create in the main panel two tabs named “Content” and “Measures” that will contain the output of the functions of exercise 3 and exercise 4 respectively.
+ui <- fluidPage(pageWithSidebar(
+  headerPanel("Descriptive Analysis"),
+  sidebarPanel(
+    selectInput("fun",
+                h3("Select functions"),
+                list("Summary" = 1, 
+                     "Structure" = 2, 
+                     "Head" = 3,
+                     "Tail"=4,"Names"=5),selected = 1 ),
+    selectInput("me",
+              h3("Select measure"),
+              list("Mean" = 1, 
+                   "Median" = 2, 
+                   "Max" = 3,
+                   "Min"=4,"Range"=5,"Standard  Deviation"=6),selected = 1 ),
+    selectInput("var",
+              h3("Select variable"),
+              list("ActualElapsedTime" = "ActualElapsedTime", 
+                   "CRSElapsedTime" = "CRSElapsedTime", 
+                   "AirTime" = "AirTime",
+                   "ArrDelay"="ArrDelay","DepDelay"="DepDelay","TaxiIn"="TaxiIn","TaxiOut"="TaxiOut"),selected = "ActualElapsedTime" )), mainPanel(tabsetPanel(tabPanel("Content", verbatimTextOutput("cont")), tabPanel("Measures", verbatimTextOutput("meas"))))))
+#Now that we are done with the user interface, create the server side of the app and the output that is supposed to print the functions of the exercise 3. (please check out the first tab of the app, to make things more clear).
+server <- function(input, output) {
+  output$cont <- renderPrint({
+    if (input$fun == 1 ){
+      print(summary(flights))
+    }
+    else if (input$fun == 2 ){
+      print(str(flights))
+    }
+    else if (input$fun == 3 ){
+      print(head(flights))
+    }
+    else if (input$fun == 4 ){
+      print(tail(flights))
+    }
+    else {
+      print(names(flights))
+    }
+  })
+  output$meas <- renderPrint({
+    if (input$me == 1 ){
+      print(mean(flights[[input$var]],na.rm = TRUE))
+    }
+    else if (input$me == 2 ){
+      print(median(flights[[input$var]],na.rm = TRUE))
+    }
+    else if (input$me == 3 ){
+      print(max(flights[[input$var]],na.rm = TRUE))
+    }
+    else if (input$me == 4 ){
+      print(min(flights[[input$var]],na.rm = TRUE))
+    }
+    else if (input$me == 5 ){
+      print(range(flights[[input$var]],na.rm = TRUE))
+    }
+    else{
+      print(sd(flights[[input$var]],na.rm = TRUE))
+    }
+  })
+}
+shinyApp(ui = ui, server = server)
+
+
+
+
+
+
+
+
+
+
+
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
