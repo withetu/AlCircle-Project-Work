@@ -17,22 +17,26 @@ library(RCurl)
 library(bitops)
 library(jsonlite)
 library(httr)
-library(rga)
+library(RGA)
 library(ggplot2)
 library(xlsx)
 library(RODBC)
 library(RMySQL)
+library(devtools)
+library(curl)
+install_github("skardhamar/rga")
+library(rga)
 
 rga.open(instance = "ga")
 id <- 46730774
-gaData <- ga$getData(id, start.date = as.Date("2016-10-01"), end.date = as.Date("2016-10-31"))
+gaData <- ga$getData(id, start.date = as.Date("2017-02-01"), end.date = as.Date("2017-02-28"))
 ##clusters <- hclust(dist(gaData[,3:4]))
 ##plot(clusters)
 
-gaData <- ga$getData(id, start.date = as.Date("2016-10-01"), 
-                     end.date=as.Date("2016-10-31"), metrics = "ga:pageviews,ga:BounceRate,ga:AvgSessionDuration")
+gaData <- ga$getData(id, start.date = as.Date("2017-02-01"), 
+                     end.date=as.Date("2017-02-28"), metrics = "ga:pageviews,ga:BounceRate,ga:AvgSessionDuration")
 
-gaData2 <- ga$getData(id, start.date = as.Date("2016-11-01"), end.date = as.Date("2016-11-14"), metrics = "ga:totalevents")
+gaData2 <- ga$getData(id, start.date = as.Date("2017-02-01"), end.date = as.Date("2017-02-28"), metrics = "ga:totalevents")
 write.csv(gaData2, "ALC-GA-NOV.csv")
 
 ##gaData <- ga$getData(id, start.date = as.Date("2016-10-01"), 
@@ -48,7 +52,7 @@ ggplot(gaData, aes(date, pageviews)) + geom_line() +
   ylab("Daily Pageviews") + theme_bw() + 
   ggtitle("Monthly Pageviews")
 
-write.csv(gaData, "ALC-GA-OCT1.csv")
+write.csv(gaData, "ALC-GA-Feb-17.csv")
 
 ## write your data to a workbook called My Data Export.xlsx and a sheet called Data
 
@@ -57,7 +61,7 @@ sheet <- createSheet(wb, sheetName = "Data") #create a sheet named Data
 addDataFrame(gaData, sheet, row.names = FALSE) #add your data to the Data sheet
 #don't forget to save your workbook
 #this will save to your working directory
-saveWorkbook(wb, "My Data Export.xlsx")
+saveWorkbook(wb, "My Data Export 17.xlsx")
 
 drv = dbDriver("MySQL")
 con = dbConnect(drv, host="localhost", dbname="gadata", user="withetu", pass="enter1234") ## open a connection to a MySQL database

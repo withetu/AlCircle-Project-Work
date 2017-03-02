@@ -75,7 +75,15 @@ if(!require(rgdal)){
 }
 library(rgdal)
 
+install.packages("colourpicker")
+install.packages("devtools")
+devtools::install_github("daattali/colourpicker")
 
+
+if(!require(MASS)){
+  install.packages("MASS")
+}
+library(MASS)
 
 
 
