@@ -95,6 +95,11 @@ if(!require(rgl)){
 }
 library(rgl)
 
+if(!require(LSD)){
+  install.packages("LSD")
+}
+library(LSD)
+
 
 
 
