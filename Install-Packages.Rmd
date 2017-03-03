@@ -85,6 +85,15 @@ if(!require(MASS)){
 }
 library(MASS)
 
+if(!require(scatterplot3d)){
+  install.packages("scatterplot3d")
+}
+library(scatterplot3d)
+
+if(!require(rgl)){
+  install.packages("rgl")
+}
+library(rgl)
 
 
 
