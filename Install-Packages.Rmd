@@ -105,6 +105,15 @@ if(!require(BatchGetSymbols)){
 }
 library(BatchGetSymbols)
 
+if(!require(extrafont)){
+  install.packages("extrafont")
+}
+library(extrafont)
+font_import()
+loadfonts()
+fonts()
+loadfonts(device="win")
+
 
 
 
