@@ -114,6 +114,10 @@ loadfonts()
 fonts()
 loadfonts(device="win")
 
+if(!require(wordcloud)){
+  install.packages("wordcloud")
+}
+library("wordcloud")
 
 
 
