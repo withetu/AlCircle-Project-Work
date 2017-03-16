@@ -124,7 +124,10 @@ if(!require(tm)){
 }
 library("tm")
 
-
+if(!require(RDSTK)){
+  install.packages("RDSTK")
+}
+library(RDSTK)
 
 
 ```
