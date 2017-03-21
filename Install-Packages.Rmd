@@ -60,51 +60,60 @@ install.packages("ggmap")
 install.packages("rvest")
 install.packages("extrafont")
 install.packages("plotly")
+#-----------------------------------
 if(!require(zoo)){
   install.packages("zoo")
 }
 library(zoo)
 
+#-----------------------------------
 if(!require(raster)){
   install.packages("raster")
 }
 library(raster)
 
+#-----------------------------------
 if(!require(rgdal)){
   install.packages("rgdal")
 }
 library(rgdal)
 
+#-----------------------------------
 install.packages("colourpicker")
 install.packages("devtools")
 devtools::install_github("daattali/colourpicker")
 
-
+#-----------------------------------
 if(!require(MASS)){
   install.packages("MASS")
 }
 library(MASS)
 
+#-----------------------------------
 if(!require(scatterplot3d)){
   install.packages("scatterplot3d")
 }
 library(scatterplot3d)
 
+#-----------------------------------
 if(!require(rgl)){
   install.packages("rgl")
 }
 library(rgl)
 
+#-----------------------------------
 if(!require(LSD)){
   install.packages("LSD")
 }
 library(LSD)
 
+#-----------------------------------
 if(!require(BatchGetSymbols)){
   install.packages(BatchGetSymbols)
 }
 library(BatchGetSymbols)
 
+#-----------------------------------
 if(!require(extrafont)){
   install.packages("extrafont")
 }
@@ -114,21 +123,31 @@ loadfonts()
 fonts()
 loadfonts(device="win")
 
+#-----------------------------------
 if(!require(wordcloud)){
   install.packages("wordcloud")
 }
 library("wordcloud")
 
+#-----------------------------------
 if(!require(tm)){
   install.packages("tm")
 }
 library("tm")
 
+#-----------------------------------
 if(!require(RDSTK)){
   install.packages("RDSTK")
 }
 library(RDSTK)
 
+#-----------------------------------
+if(!require(nmle)){
+  install.packages("nmle")
+}
+library(nmle)
+
+#-----------------------------------
 
 ```
 
