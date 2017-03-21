@@ -148,6 +148,12 @@ if(!require(nmle)){
 library(nmle)
 
 #-----------------------------------
+if(!require(tabplot)){
+  install.packages("tabplot")
+}
+library(tabplot)
+
+#-----------------------------------
 
 ```
 
