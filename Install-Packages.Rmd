@@ -178,6 +178,13 @@ if(!require(ggrepel)){
 library(ggrepel)
 
 #-----------------------------------
+if(!require(SnowballC)){
+  install.packages("SnowballC")
+}
+library(SnowballC)
+
+#-----------------------------------
+
 
 ```
 
