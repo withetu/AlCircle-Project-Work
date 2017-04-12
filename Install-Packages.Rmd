@@ -184,8 +184,12 @@ if(!require(SnowballC)){
 library(SnowballC)
 
 #-----------------------------------
+if(!require(moments)){
+  install.packages("moments")
+}
+library(moments)
 
-
+#-----------------------------------
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
