@@ -196,6 +196,20 @@ if(!require(shinydashboard)){
 library(shinydashboard)
 
 #-----------------------------------
+if(!require(fields)){
+  install.packages("fields")
+}
+library(fields)
+
+#-----------------------------------
+if(!require(plot3D)){
+  install.packages("plot3D")
+}
+library(plot3D)
+#-----------------------------------
+
+
+
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
