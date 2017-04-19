@@ -206,9 +206,38 @@ if(!require(plot3D)){
   install.packages("plot3D")
 }
 library(plot3D)
+
 #-----------------------------------
+if(!require(DMwR)){
+  install.packages("DMwR")
+}
+library(DMwR)
 
+#-----------------------------------
+if(!require(caretEnsemble)){
+  install.packages("caretEnsemble")
+}
+library(caretEnsemble)
 
+#-----------------------------------
+if(!require(pROC)){
+  install.packages("pROC")
+}
+library(pROC)
+
+#-----------------------------------
+if(!require(tm)){
+  install.packages("tm")
+}
+library(tm)
+
+#-----------------------------------
+if(!require(jiebaR)){
+  install.packages("jiebaR")
+}
+library(jiebaR)
+
+#-----------------------------------
 
 ```
 
