@@ -238,6 +238,12 @@ if(!require(jiebaR)){
 library(jiebaR)
 
 #-----------------------------------
+if(!require(lmtest)){
+  install.packages("lmtest")
+}
+library(lmtest)
+
+#-----------------------------------
 
 ```
 
