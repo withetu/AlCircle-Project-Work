@@ -262,6 +262,12 @@ if(!require(qgraph)){
 library(qgraph)
 
 #-----------------------------------
+if(!require(testthat)){
+  install.packages("testthat ")
+}
+library(testthat)
+
+#-----------------------------------
 
 ```
 
