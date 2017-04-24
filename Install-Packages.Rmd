@@ -244,6 +244,24 @@ if(!require(lmtest)){
 library(lmtest)
 
 #-----------------------------------
+if(!require(SemiPar)){
+  install.packages("SemiPar")
+}
+library(SemiPar)
+
+#-----------------------------------
+if(!require(Hmisc)){
+  install.packages("Hmisc")
+}
+library(Hmisc)
+
+#-----------------------------------
+if(!require(qgraph)){
+  install.packages("qgraph")
+}
+library(qgraph)
+
+#-----------------------------------
 
 ```
 
