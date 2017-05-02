@@ -9,57 +9,262 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 
 ```{r}
 
+if(!require(devtools)){
 install.packages("devtools")
+}
+library(devtools)
+
+#-----------------------------------
+
 install_github("skardhamar/rga", force = TRUE)  #not installed in new system
-install.packages("httr")
+
+#-----------------------------------
+if(!require(httr)){
+  install.packages("httr")
+}
+library(httr)
+#-----------------------------------
+  if(!require(xlsx)){
 install.packages("xlsx")
+  }
+library(xlsx)
+#-----------------------------------
+    if(!require(RODBC)){
 install.packages("RODBC")
+    }
+library(RODBC)
+#-----------------------------------
+      if(!require(RMySQL)){
 install.packages("RMySQL")
+      }
+library(RMySQL)
+#-----------------------------------
+        if(!require(svglite)){
 install.packages("svglite")
+        }
+library(svglite)
+#-----------------------------------
+      
 vignette("fonts")
+          
+#-----------------------------------
+            if(!require(stringi)){
 install.packages("stringi")
+            }
+library(stringi)
+#-----------------------------------
+              if(!require(caret)){
 install.packages("caret")
+              }
+library(caret)
+#-----------------------------------
+                if(!require(stringr)){
 install.packages("stringr")
-install.packages("chron")
-install.packages("Hmisc")
-install.packages("rapportools")
-install.packages("outliers")
-install.packages("googlesheets")
+                }
+library(stringr)
+#-----------------------------------
+if(!require(chron)){
+                  install.packages("chron")
+}
+library(chron)
+#-----------------------------------
+if(!require(Hmisc)){
+  install.packages("Hmisc")
+}
+library(Hmisc)
+#-----------------------------------
+if(!require()){
+  install.packages("rapportools")
+}
+library()
+#-----------------------------------
+if(!require(rapportools)){
+  install.packages("outliers")
+}
+library(rapportools)
+#-----------------------------------
+if(!require(googlesheets)){
+  install.packages("googlesheets")
+}
+library(googlesheets)
+#-----------------------------------
+if(!require(psych)){
 install.packages("psych")
-install.packages("ez")
-install.packages("twitteR")
-install.packages("SchedulerR")
-install.packages("rjson")
-install.packages("tabulizer")
-install.packages("XML")
-install.packages("RCurl")
-install.packages("bitops")
-install.packages("wordcloud2")
-install.packages("webshot")
-install.packages("sqldf")
-install.packages("PASWR")
-install.packages("rvest")
-install.packages("corrgram")
-install.packages("RGoogleAnalytics")
+}
+library(psych)
+#-----------------------------------
+if(!require(ez)){
+  install.packages("ez")
+}
+library(ez)
+#-----------------------------------
+if(!require(twitteR)){
+  install.packages("twitteR")
+}
+library(twitteR)
+#-----------------------------------
+if(!require(SchedulerR)){
+  install.packages("SchedulerR")
+}
+library(SchedulerR)
+#-----------------------------------
+if(!require(rjson)){
+  install.packages("rjson")
+}
+library(rjson)
+#-----------------------------------
+if(!require(tabulizer)){
+  install.packages("tabulizer")
+}
+library(tabulizer)
+#-----------------------------------
+if(!require(XML)){
+  install.packages("XML")
+}
+library(XML)
+#-----------------------------------
+if(!require(RCurl)){
+  install.packages("RCurl")
+}
+library(RCurl)
+#-----------------------------------
+if(!require(bitops)){
+  install.packages("bitops")
+}
+library(bitops)
+#-----------------------------------
+if(!require(wordcloud2)){
+  install.packages("wordcloud2")
+}
+library(wordcloud2)
+#-----------------------------------
+if(!require(webshot)){
+  install.packages("webshot")
+}
+library(webshot)
+#-----------------------------------
+if(!require(sqldf)){
+  install.packages("sqldf")
+}
+library(sqldf)
+#-----------------------------------
+if(!require(PASWR)){
+  install.packages("PASWR")
+}
+library(PASWR)
+#-----------------------------------
+if(!require(rvest)){
+  install.packages("rvest")
+}
+library(rvest)
+#-----------------------------------
+if(!require(corrgram)){
+  install.packages("corrgram")
+}
+library(corrgram)
+#-----------------------------------
+if(!require(RGoogleAnalytics)){
+  install.packages("RGoogleAnalytics")
+}
+library(RGoogleAnalytics)
+#-----------------------------------
+if(!require(shiny)){
 install.packages("shiny")
-install.packages("rsconnect")
-install.packages("ggplot2")
-install.packages("dplyr")
-install.packages("ggmap")
-install.packages("pdftools")
-install.packages("tree")
-install.packages("ROCR")
-install.packages("rpart.plot")
-install.packages("googleAnalyticsR")
-install.packages("xml2")
-install.packages("searchConsoleR")
-install.packages("tidyverse")
-install.packages("stringr")
-install.packages("forcats")
-install.packages("ggmap")
-install.packages("rvest")
-install.packages("extrafont")
-install.packages("plotly")
+}
+library(shiny)
+#-----------------------------------
+if(!require(rsconnect)){
+  install.packages("rsconnect")
+}
+library(rsconnect)
+#-----------------------------------
+if(!require(ggplot2)){
+  install.packages("ggplot2")
+}
+library(ggplot2)
+#-----------------------------------
+if(!require(dplyr)){
+  install.packages("dplyr")
+}
+library(dplyr)
+#-----------------------------------
+if(!require(ggmap)){
+  install.packages("ggmap")
+}
+library(ggmap)
+#-----------------------------------
+if(!require(pdftools)){
+  install.packages("pdftools")
+}
+library(pdftools)
+#-----------------------------------
+if(!require(tree)){
+  install.packages("tree")
+}
+library(tree)
+#-----------------------------------
+if(!require(ROCR)){
+  install.packages("ROCR")
+}
+library(ROCR)
+#-----------------------------------
+if(!require(rpart.plot)){
+  install.packages("rpart.plot")
+}
+library(rpart.plot)
+#-----------------------------------
+if(!require(googleAnalyticsR)){
+  install.packages("googleAnalyticsR")
+}
+library(googleAnalyticsR)
+#-----------------------------------
+if(!require(xml2)){
+  install.packages("xml2")
+}
+library(xml2)
+#-----------------------------------
+if(!require(searchConsoleR)){
+  install.packages("searchConsoleR")
+}
+library(searchConsoleR)
+#-----------------------------------
+if(!require(tidyverse)){
+  install.packages("tidyverse")
+}
+library(tidyverse)
+#-----------------------------------
+if(!require(stringr)){
+  install.packages("stringr")
+}
+library(stringr)
+#-----------------------------------
+if(!require(forcats)){
+  install.packages("forcats")
+}
+library(forcats)
+#-----------------------------------
+if(!require(ggmap)){
+  install.packages("ggmap")
+}
+library(ggmap)
+#-----------------------------------
+if(!require(rvest)){
+  install.packages("rvest")
+}
+library(rvest)
+#-----------------------------------
+if(!require(extrafont)){
+  install.packages("extrafont")
+}
+library(extrafont)
+#-----------------------------------
+if(!require(plotly)){
+  install.packages("plotly")
+}
+library(plotly)
+#-----------------------------------
+
+
 #-----------------------------------
 if(!require(zoo)){
   install.packages("zoo")
@@ -272,6 +477,24 @@ if(!require(animation)){
   install.packages("animation")
 }
 library(animation)
+
+#-----------------------------------
+if(!require(Quandl)){
+  install.packages("Quandl")
+}
+library(Quandl)
+
+#-----------------------------------
+if(!require(forecast)){
+  install.packages("forecast")
+}
+library(forecast)
+
+#-----------------------------------
+if(!require(dygraphs)){
+  install.packages("dygraphs")
+}
+library(dygraphs)
 
 #-----------------------------------
 
