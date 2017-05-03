@@ -503,6 +503,12 @@ if(!require(pastecs)){
 library(pastecs)
 
 #-----------------------------------
+if(!require(mvoutlier)){
+  install.packages("mvoutlier")
+}
+library(mvoutlier)
+
+#-----------------------------------
 
 
 ```
