@@ -509,6 +509,25 @@ if(!require(mvoutlier)){
 library(mvoutlier)
 
 #-----------------------------------
+if(!require(googleVis)){
+  install.packages("googleVis")
+}
+library(googleVis)
+
+#-----------------------------------
+if(!require(rCharts)){
+  install.packages("rCharts")
+}
+library(rCharts)
+
+#-----------------------------------
+if(!require(sankeyD3)){
+  install.packages("sankeyD3")
+}
+library(sankeyD3)
+
+#-----------------------------------
+
 
 
 ```
