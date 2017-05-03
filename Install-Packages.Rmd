@@ -497,6 +497,13 @@ if(!require(dygraphs)){
 library(dygraphs)
 
 #-----------------------------------
+if(!require(pastecs)){
+  install.packages("pastecs")
+}
+library(pastecs)
+
+#-----------------------------------
+
 
 ```
 
