@@ -527,7 +527,42 @@ if(!require(sankeyD3)){
 library(sankeyD3)
 
 #-----------------------------------
+if(!require(rtweet)){
+  install.packages("rtweet")
+}
+library(rtweet)
 
+#-----------------------------------
+if(!require(dplyr)){
+  install.packages("dplyr")
+}
+library(dplyr)
+
+#-----------------------------------
+if(!require(magick)){
+  install.packages("magick")
+}
+library(magick)
+
+#-----------------------------------
+if(!require(httr)){
+  install.packages("httr")
+}
+library(httr)
+
+#-----------------------------------
+if(!require(stringr)){
+  install.packages("stringr")
+}
+library(stringr)
+
+#-----------------------------------
+if(!require(purrr)){
+  install.packages("purrr")
+}
+library(purrr)
+
+#-----------------------------------
 
 
 ```
