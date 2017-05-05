@@ -563,6 +563,25 @@ if(!require(purrr)){
 library(purrr)
 
 #-----------------------------------
+if(!require(hrbrthemes)){
+  install.packages("hrbrthemes")
+}
+library(hrbrthemes)
+
+#-----------------------------------
+if(!require(tidytext)){
+  install.packages("tidytext")
+}
+library(tidytext)
+
+#-----------------------------------
+if(!require(wordcloud)){
+  install.packages("wordcloud")
+}
+library(wordcloud)
+
+#-----------------------------------
+
 
 
 ```
