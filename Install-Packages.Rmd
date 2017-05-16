@@ -581,6 +581,24 @@ if(!require(wordcloud)){
 library(wordcloud)
 
 #-----------------------------------
+if(!require(ggalt)){
+  install.packages("ggalt")
+}
+library(ggalt)
+
+#-----------------------------------
+if(!require(imager)){
+  install.packages("imager")
+}
+library(imager)
+
+#-----------------------------------
+if(!require(bmp)){
+  install.packages("bmp")
+}
+library(bmp)
+
+#-----------------------------------
 
 
 
